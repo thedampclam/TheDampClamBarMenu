@@ -947,6 +947,30 @@
       "isSpecial": false,
       "isGifted": false,
       "inStock": true
+    },
+    {
+      "name": "New Riff Kentucky Straight Malted Rye Whiskey Sherry Finish",
+      "category": "Bourbon & American Whiskey",
+      "subCategory": "Malted Rye Whiskey",
+      "style": "Malted Rye Whiskey",
+      "proof": "117.3 Proof (58.65% ABV)",
+      "abv": "117.3 Proof (58.65% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "New Riff Distilling, Aged 6 Years, Barrel Proof, Without Chill Filtration",
+      "origin": "Kentucky / 100% Malted Rye",
+      "isSpecial": true,
+      "isGifted": true,
+      "inStock": true,
+      "extra": {
+        "notes": "Six-year-old 100% malted rye whiskey finished in Oloroso and Pedro Ximenez sherry casks, presented at barrel proof.",
+        "mash": "Kentucky / 100% Malted Rye",
+        "barrel": "Finished in Oloroso and Pedro Ximenez Sherry Casks",
+        "giftNotes": "Originally intended as a housewarming gift, but due to shipping delays, it became early 2026 Christmas present from Kyle and Lizzy."
+      }
     }
   ]
 }
