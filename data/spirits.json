@@ -971,6 +971,28 @@
         "barrel": "Finished in Oloroso and Pedro Ximenez Sherry Casks",
         "giftNotes": "Originally intended as a housewarming gift, but due to shipping delays, it became early 2026 Christmas present from Kyle and Lizzy."
       }
+    },
+    {
+      "name": "Glenglassaugh 12-Year Highland Single Malt",
+      "category": "Scotch Whisky",
+      "subCategory": "Single Malt",
+      "style": "Single Malt",
+      "proof": "45%",
+      "abv": "45%",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Glenglassaugh Costal Malt matured in bourbon, sherry, and red wine casks for luscious waves of ripe fruit carried on an ocean breeze.",
+      "origin": "Single Malt",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "mash": "Single Malt",
+        "barrel": "Bourbon, Sherry and Red Wine Casks"
+      }
     }
   ]
 }
