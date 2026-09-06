@@ -11,14 +11,14 @@
         "mash": "Jim Beam High-Rye Bourbon Mash",
         "notes": "Vanilla bean, toasted oak, brown sugar, and warm spice."
       },
-      "inStock": false,
+      "inStock": true,
       "isGifted": false,
       "category": "Bourbon & American Whiskey",
       "subCategory": "Straight Bourbon",
       "sizes": {
-        "750mL": 0
+        "750mL": 1
       },
-      "quantity": 0
+      "quantity": 1
     },
     {
       "size": "750 mL",
