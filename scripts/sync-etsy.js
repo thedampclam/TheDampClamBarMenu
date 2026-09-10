@@ -6,13 +6,25 @@ const ETSY_SHARED_SECRET = process.env.ETSY_SHARED_SECRET ? process.env.ETSY_SHA
 const ETSY_SHOP_ID = process.env.ETSY_SHOP_ID ? process.env.ETSY_SHOP_ID.trim() : '';
 const MERCH_FILE = path.join(__dirname, '../data/merch.json');
 
+// Exact display order matching your Etsy arrangement
+const FEATURED_ORDER = [
+  "Shuck Around and Find Out T-shirt",
+  "Women's Ideal Racerback Tank - Shuck",
+  "Unisex Shuck Around and Find Out Hoo",
+  "The Damp Clam Trucker Mesh Hat",
+  "The Damp Clam ceramic coaster",
+  "The Damp Clam Signature Shell Bikini",
+  "Shucked daily, Loved nightly women's b",
+  "The Damp Clam logo seashell, Swim Sh",
+  "Liquor Down Below Baseball Top"
+];
+
 async function syncMerch() {
   if (!ETSY_API_KEY || !ETSY_SHOP_ID) {
     console.error('Missing ETSY_API_KEY or ETSY_SHOP_ID secret.');
     process.exit(1);
   }
 
-  // If a shared secret is present, concatenate keystring:shared_secret
   const apiKeyHeader = ETSY_SHARED_SECRET 
     ? `${ETSY_API_KEY}:${ETSY_SHARED_SECRET}` 
     : ETSY_API_KEY;
@@ -40,13 +52,13 @@ async function syncMerch() {
     const listings = data.results || [];
     console.log(`Found ${listings.length} active listings on Etsy.`);
 
-    const items = listings.map(listing => {
+    let items = listings.map(listing => {
       const priceAmount = listing.price ? (listing.price.amount / listing.price.divisor).toFixed(2) : '0.00';
       const cleanDesc = listing.description ? listing.description.split('\n')[0].replace(/[\r\n]+/g, ' ').trim() : '';
 
       return {
         name: listing.title,
-        category: "T-Shirts",
+        category: "Merchandise",
         desc: cleanDesc,
         price: `$${priceAmount}`,
         etsyUrl: listing.url,
@@ -54,9 +66,26 @@ async function syncMerch() {
       };
     });
 
+    // Sort strictly by the defined FEATURED_ORDER list
+    items.sort((a, b) => {
+      const aName = (a.name || '').toLowerCase();
+      const bName = (b.name || '').toLowerCase();
+
+      const aIndex = FEATURED_ORDER.findIndex(phrase => aName.includes(phrase.toLowerCase()));
+      const bIndex = FEATURED_ORDER.findIndex(phrase => bName.includes(phrase.toLowerCase()));
+
+      if (aIndex !== -1 && bIndex !== -1) {
+        return aIndex - bIndex;
+      }
+      if (aIndex !== -1) return -1;
+      if (bIndex !== -1) return 1;
+
+      return aName.localeCompare(bName);
+    });
+
     const payload = { items };
     fs.writeFileSync(MERCH_FILE, JSON.stringify(payload, null, 2));
-    console.log(`✓ Updated data/merch.json with ${items.length} items.`);
+    console.log(`✓ Updated data/merch.json with ${items.length} items in specified order.`);
   } catch (err) {
     console.error('Fatal execution error:', err);
     process.exit(1);
