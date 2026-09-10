@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ETSY_API_KEY = process.env.ETSY_API_KEY ? process.env.ETSY_API_KEY.trim() : '';
+const ETSY_SHARED_SECRET = process.env.ETSY_SHARED_SECRET ? process.env.ETSY_SHARED_SECRET.trim() : '';
 const ETSY_SHOP_ID = process.env.ETSY_SHOP_ID ? process.env.ETSY_SHOP_ID.trim() : '';
 const MERCH_FILE = path.join(__dirname, '../data/merch.json');
 
@@ -11,6 +12,11 @@ async function syncMerch() {
     process.exit(1);
   }
 
+  // If a shared secret is present, concatenate keystring:shared_secret
+  const apiKeyHeader = ETSY_SHARED_SECRET 
+    ? `${ETSY_API_KEY}:${ETSY_SHARED_SECRET}` 
+    : ETSY_API_KEY;
+
   console.log(`Querying Etsy Open API v3 for Shop ID: ${ETSY_SHOP_ID}...`);
   const url = `https://openapi.etsy.com/v3/application/shops/${ETSY_SHOP_ID}/listings/active?limit=100`;
   
@@ -18,7 +24,7 @@ async function syncMerch() {
     const res = await fetch(url, {
       method: 'GET',
       headers: {
-        'x-api-key': ETSY_API_KEY,
+        'x-api-key': apiKeyHeader,
         'Accept': 'application/json',
         'User-Agent': 'TheDampClamMenuSync/1.0'
       }
