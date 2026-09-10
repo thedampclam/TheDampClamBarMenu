@@ -6,17 +6,22 @@ const ETSY_SHARED_SECRET = process.env.ETSY_SHARED_SECRET ? process.env.ETSY_SHA
 const ETSY_SHOP_ID = process.env.ETSY_SHOP_ID ? process.env.ETSY_SHOP_ID.trim() : '';
 const MERCH_FILE = path.join(__dirname, '../data/merch.json');
 
-// Exact display order matching your Etsy arrangement
+// Exact display order matching your updated Etsy arrangement
 const FEATURED_ORDER = [
   "Shuck Around and Find Out T-shirt",
   "Women's Ideal Racerback Tank - Shuck",
   "Unisex Shuck Around and Find Out Hoo",
   "The Damp Clam Trucker Mesh Hat",
   "The Damp Clam ceramic coaster",
+  "The Damp Clam Poker Playing Cards",
   "The Damp Clam Signature Shell Bikini",
   "Shucked daily, Loved nightly women's b",
   "The Damp Clam logo seashell, Swim Sh",
-  "Liquor Down Below Baseball Top"
+  "If you can read this, Take me to The Da",
+  "Liquor Down Below Baseball Top",
+  "The Damp Clam Sipper Glass, 16oz",
+  "Spiral Notebook - Ruled Line",
+  "The Damp Clam Phone Tough Cases"
 ];
 
 async function syncMerch() {
