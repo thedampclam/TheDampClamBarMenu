@@ -21,11 +21,281 @@
       "abv": "6% ABV",
       "origin": "Madison, WI",
       "details": "Peach white sangria.",
-      "inStock": True,
+      "inStock": true,
       "sizes": {
         "Can": 4
       },
       "quantity": 4
+    },
+    {
+      "name": "Bell's Oberon Ale",
+      "category": "Beer",
+      "subCategory": "Wheat Ale",
+      "style": "American Wheat Ale",
+      "abv": "5.8% ABV",
+      "size": "12 oz Can",
+      "sizes": {
+        "12 oz Can": 4
+      },
+      "quantity": 4,
+      "details": "Bell's Brewery, Comstock, Michigan",
+      "origin": "Comstock, Michigan",
+      "inStock": true,
+      "extra": {
+        "notes": "Classic citrusy, smooth, and refreshing American wheat ale brewed with Bell's signature house yeast."
+      }
+    },
+    {
+      "name": "Young Blood Tom Petty Circa 1991",
+      "category": "Beer",
+      "subCategory": "Sour",
+      "style": "Tropical / Fruit Sour",
+      "abv": "7.5% ABV",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 4
+      },
+      "quantity": 4,
+      "details": "Young Blood Beer Co., Madison, WI",
+      "origin": "Madison, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Strawberry lemonade inspired tropical sour ale packed with vibrant sweet-tart citrus and berries."
+      }
+    },
+    {
+      "name": "Peach Barn Door County Sunsets",
+      "category": "Beer",
+      "subCategory": "Sour",
+      "style": "Tropical Sour",
+      "abv": "N/A",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 4
+      },
+      "quantity": 4,
+      "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
+      "origin": "Door County, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "A smooth, refreshing tropical sour crafted to capture a classic Door County lakeside sunset."
+      }
+    },
+    {
+      "name": "Karben4 Supply Drop Tropical",
+      "category": "Beer",
+      "subCategory": "Sour",
+      "style": "Tropical Fruited Sour",
+      "abv": "4.2% ABV",
+      "size": "12 oz Can",
+      "sizes": {
+        "12 oz Can": 11
+      },
+      "quantity": 11,
+      "details": "Karben4 Brewing, Madison, WI",
+      "origin": "Madison, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Fruited sour loaded with juicy pineapple, mango, tangerine, and passion fruit."
+      }
+    },
+    {
+      "name": "Karben4 Supply Drop Blueberry Blackberry",
+      "category": "Beer",
+      "subCategory": "Sour",
+      "style": "Fruited Sour",
+      "abv": "4.2% ABV",
+      "size": "12 oz Can",
+      "sizes": {
+        "12 oz Can": 2
+      },
+      "quantity": 2,
+      "details": "Karben4 Brewing, Madison, WI",
+      "origin": "Madison, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Richly fruited sour exploding with sweet and tart blueberry and blackberry character."
+      }
+    },
+    {
+      "name": "Peach Barn Berry Bonds",
+      "category": "Beer",
+      "subCategory": "Sour",
+      "style": "Fruit Sour / Ale",
+      "abv": "N/A",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 8
+      },
+      "quantity": 8,
+      "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
+      "origin": "Door County, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Raspberry & blackberry tart fruit brew with sweet berry aromatics."
+      }
+    },
+    {
+      "name": "Peach Barn Pitching a Tent",
+      "category": "Beer",
+      "subCategory": "Fruit Smoothie",
+      "style": "Fruit Smoothie Sour",
+      "abv": "N/A",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 6
+      },
+      "quantity": 6,
+      "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
+      "origin": "Door County, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Rich, heavily fruited smoothie style sour ale with bold fruit puree character."
+      }
+    },
+    {
+      "name": "Peach Barn Silo Sisters",
+      "category": "Beer",
+      "subCategory": "Sour",
+      "style": "Peach Sour",
+      "abv": "N/A",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 4
+      },
+      "quantity": 4,
+      "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
+      "origin": "Door County, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Sweet, tangy, and occasionally sour peach ale inspired by the magic peach palace."
+      }
+    },
+    {
+      "name": "Latitude 42 Michigan Honey Amber",
+      "category": "Beer",
+      "subCategory": "Amber Ale",
+      "style": "Honey Amber Ale",
+      "abv": "N/A",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 3
+      },
+      "quantity": 3,
+      "details": "Latitude 42 Brewing Company, Portage / Oshtemo, MI",
+      "origin": "Portage, Michigan",
+      "inStock": true,
+      "extra": {
+        "notes": "Smooth, malt-forward amber ale balanced with real local Michigan honey."
+      }
+    },
+    {
+      "name": "Peach Barn Do You Like Dragons?",
+      "category": "Hard Seltzer",
+      "subCategory": "Seltzer",
+      "style": "Mixed Berry Hard Seltzer",
+      "abv": "N/A",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 2
+      },
+      "quantity": 2,
+      "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
+      "origin": "Door County, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Crisp and refreshing craft hard seltzer infused with wild mixed berries."
+      }
+    },
+    {
+      "name": "Young Blood The Brothers McMuffin",
+      "category": "Beer",
+      "subCategory": "Sour",
+      "style": "Fruit Punch Sour",
+      "abv": "4.2% ABV",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 1
+      },
+      "quantity": 1,
+      "details": "Young Blood Beer Co., Madison, WI",
+      "origin": "Madison, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Tropical fruit punch sour brewed with passion fruit, orange, guava, and raspberry."
+      }
+    },
+    {
+      "name": "Working Draft Pulp Culture",
+      "category": "Beer",
+      "subCategory": "IPA",
+      "style": "Hazy IPA",
+      "abv": "6.3% ABV",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 1
+      },
+      "quantity": 1,
+      "details": "Working Draft Beer Company, Madison, WI",
+      "origin": "Madison, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Juicy, aromatic hazy IPA bursting with bright citrus and ripe tropical hop punch."
+      }
+    },
+    {
+      "name": "Griffin Claw Sin Repent Repeat",
+      "category": "Beer",
+      "subCategory": "Stout",
+      "style": "Pączki Stout",
+      "abv": "8.0% ABV",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 1
+      },
+      "quantity": 1,
+      "details": "Griffin Claw Brewing Co., Birmingham / Rochester Hills, MI",
+      "origin": "Michigan, USA",
+      "inStock": true,
+      "extra": {
+        "notes": "Rich, decadent stout brewed with dozens of real pączki pastries."
+      }
+    },
+    {
+      "name": "Peach Barn Six 4 Three",
+      "category": "Beer",
+      "subCategory": "IPA",
+      "style": "Double Hazy IPA",
+      "abv": "N/A",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 1
+      },
+      "quantity": 1,
+      "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
+      "origin": "Door County, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Juicy, tropical double dry-hopped hazy IPA guaranteed to get you out of a jam."
+      }
+    },
+    {
+      "name": "Ale Asylum Unshadowed",
+      "category": "Beer",
+      "subCategory": "Wheat Ale",
+      "style": "Hefeweizen",
+      "abv": "6.0% ABV",
+      "size": "12 oz Can",
+      "sizes": {
+        "12 oz Can": 1
+      },
+      "quantity": 1,
+      "details": "Ale Asylum, Madison, WI",
+      "origin": "Madison, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Traditional German-style unfiltered wheat beer with classic banana and clove ester notes."
+      }
     },
     {
       "name": "Cabernet Sauvignon",
