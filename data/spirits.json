@@ -1022,6 +1022,28 @@
         "barrel": "Aged 9 Years in deeply charred new American oak barrels",
         "giftNotes": "A gift to ourselves, on a Corvette trip to the bourbon trail. Etched with \"Andre & Jess Kentucky 2024\", and sealed in wax with Jess' thumb print."
       }
+    },
+    {
+      "name": "Ole Smoky Tennessee Cookies & Cream Cream Liqueur",
+      "category": "Gin, Vodka & Liqueurs",
+      "subCategory": "Cream Liqueur",
+      "style": "Cream Liqueur",
+      "proof": "35 Proof (17.5% ABV)",
+      "abv": "35 Proof (17.5% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Produced & Bottled by Ole Smoky Distillery, LLC, Gatlinburg, TN",
+      "origin": "Gatlinburg, Tennessee",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Cream liqueur made with whiskey featuring rich chocolate cookie and sweet cream flavors.",
+        "mash": "Gatlinburg, Tennessee"
+      }
     }
   ]
 }
