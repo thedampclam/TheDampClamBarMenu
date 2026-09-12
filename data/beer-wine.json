@@ -309,6 +309,28 @@
         "mash": "California, USA",
         "barrel": "N/A"
       }
+    },
+    {
+      "name": "Sit and Stay Winery Green Apple Grape Wine",
+      "category": "Wine",
+      "subCategory": "Flavored Wine",
+      "style": "Flavored Wine",
+      "proof": "10% ABV",
+      "abv": "10% ABV",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Sit and Stay Winery, Est. 2023",
+      "origin": "Grape wine with natural flavor (Green Apple)",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Crisp grape wine with natural green apple flavor.",
+        "mash": "Grape wine with natural flavor (Green Apple)"
+      }
     }
   ]
 }
