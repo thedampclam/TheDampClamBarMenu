@@ -217,6 +217,29 @@
         "mash": "Michigan, USA",
         "barrel": "N/A"
       }
+    },
+    {
+      "name": "Bocopa Marina Alta Blanco Gran Selección 2018",
+      "category": "Wine",
+      "subCategory": "White Wine",
+      "style": "White Wine",
+      "proof": "11% ABV",
+      "abv": "11% ABV",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Bodegas Bocopa, Vintage 2018",
+      "origin": "Alicante D.O., Spain / 100% Moscatel de Alejandría",
+      "isSpecial": true,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "A fresh, dry, and elegant white wine featuring aromatic floral notes of white flowers, jasmine, citrus, and green apple.",
+        "mash": "Alicante D.O., Spain / 100% Moscatel de Alejandría",
+        "barrel": "Stainless steel fermented"
+      }
     }
   ]
 }
