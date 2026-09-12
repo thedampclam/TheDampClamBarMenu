@@ -1113,6 +1113,28 @@
         "mash": "Lynchburg, Tennessee",
         "barrel": "Barrel # 25-01129, bottling date 3-11-25"
       }
+    },
+    {
+      "name": "Ole Smoky Lemon Drop Tennessee Moonshine",
+      "category": "Bourbon & American Whiskey",
+      "subCategory": "Flavored Moonshine",
+      "style": "Flavored Moonshine",
+      "proof": "65 Proof (32.5% ABV)",
+      "abv": "65 Proof (32.5% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Ole Smoky Distillery, Gatlinburg, Tennessee. Spirits Distilled from Corn with Natural Flavors and FD&C Yellow #5.",
+      "origin": "Tennessee, USA / Corn",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Sweet and tangy lemon citrus profile with a smooth, sweet moonshine finish.",
+        "mash": "Tennessee, USA / Corn"
+      }
     }
   ]
 }
