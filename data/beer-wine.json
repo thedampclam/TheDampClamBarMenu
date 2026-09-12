@@ -194,6 +194,29 @@
         "mash": "Michigan, USA",
         "barrel": "N/A"
       }
+    },
+    {
+      "name": "St. Julian Blue Raspberry Punch 20",
+      "category": "Wine",
+      "subCategory": "Flavored Wine",
+      "style": "Flavored Wine",
+      "proof": "40 Proof (20% ABV)",
+      "abv": "40 Proof (20% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "St. Julian Winery",
+      "origin": "Michigan, USA",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Sweet and vibrant blue raspberry fruit punch flavor with a 20% ABV kick.",
+        "mash": "Michigan, USA",
+        "barrel": "N/A"
+      }
     }
   ]
 }
