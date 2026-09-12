@@ -1067,6 +1067,29 @@
         "mash": "Ontario, Canada",
         "barrel": "Aged in oak barrels"
       }
+    },
+    {
+      "name": "Ole Smoky Tennessee Straight Bourbon Whiskey",
+      "category": "Bourbon & American Whiskey",
+      "subCategory": "Straight Bourbon",
+      "style": "Straight Bourbon",
+      "proof": "80 Proof (40% ABV)",
+      "abv": "80 Proof (40% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Ole Smoky Distillery, Aged 4 Years",
+      "origin": "Tennessee, USA",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "A smooth and traditional Tennessee straight bourbon whiskey aged for at least four years.",
+        "mash": "Tennessee, USA",
+        "barrel": "Aged 4 Years in Oak Barrels"
+      }
     }
   ]
 }
