@@ -1,31 +1,31 @@
 {
   "items": [
     {
-      "name": "House IPA",
+      "name": "Pony Club",
       "category": "Beer",
-      "style": "India Pale Ale",
-      "abv": "6.8% ABV",
-      "origin": "Michigan, USA",
-      "details": "Crisp citrus notes with a balanced pine and hop bitterness.",
-      "inStock": false,
+      "style": "Transfusion",
+      "abv": "4.8% ABV",
+      "origin": "Madison, WI",
+      "details": "Gluten free sour transfusion with concord grape, lime, and organic cold pressed ginger.",
+      "inStock": true,
       "sizes": {
-        "Can": 0
+        "Can": 8
       },
-      "quantity": 0,
+      "quantity": 8,
       "size": "Can"
     },
     {
-      "name": "Classic Craft Lager",
-      "category": "Beer",
-      "style": "Lager",
-      "abv": "4.8% ABV",
-      "origin": "Domestic Craft",
-      "details": "Clean, light, and refreshing golden lager served ice cold.",
-      "inStock": false,
+      "name": "Itcs Britney B*tch",
+      "category": "Hard Seltzer",
+      "style": "Sangria",
+      "abv": "6% ABV",
+      "origin": "Madison, WI",
+      "details": "Peach white sangria.",
+      "inStock": True,
       "sizes": {
-        "Can": 0
+        "Can": 4
       },
-      "quantity": 0
+      "quantity": 4
     },
     {
       "name": "Cabernet Sauvignon",
