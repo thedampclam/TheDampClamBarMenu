@@ -1044,6 +1044,29 @@
         "notes": "Cream liqueur made with whiskey featuring rich chocolate cookie and sweet cream flavors.",
         "mash": "Gatlinburg, Tennessee"
       }
+    },
+    {
+      "name": "Crown Royal Fine De Luxe Blended Canadian Whisky (2024 NFL Season Detroit Lions Limited Edition)",
+      "category": "Bourbon & American Whiskey",
+      "subCategory": "Canadian Whisky",
+      "style": "Canadian Whisky",
+      "proof": "80 Proof (40% ABV)",
+      "abv": "80 Proof (40% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Produced by The Crown Royal Distilling Company, Toronto, Ontario, Canada. Official Partner of the Detroit Lions - 2024 NFL Season Limited Edition.",
+      "origin": "Ontario, Canada",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Rich and smooth with notes of vanilla, oak, and delicate fruitiness.",
+        "mash": "Ontario, Canada",
+        "barrel": "Aged in oak barrels"
+      }
     }
   ]
 }
