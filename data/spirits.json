@@ -1090,6 +1090,29 @@
         "mash": "Tennessee, USA",
         "barrel": "Aged 4 Years in Oak Barrels"
       }
+    },
+    {
+      "name": "Jack Daniel's Single Barrel Select Tennessee Whiskey (Detroit Lions Etched Edition)",
+      "category": "Bourbon & American Whiskey",
+      "subCategory": "Tennessee Whiskey",
+      "style": "Tennessee Whiskey",
+      "proof": "94 Proof (47% ABV)",
+      "abv": "94 Proof (47% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Jack Daniel Distillery, Lynchburg, Tenn. Master Distilled",
+      "origin": "Lynchburg, Tennessee",
+      "isSpecial": true,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Rich notes of toasted oak, vanilla, sweet caramel, and subtle spice",
+        "mash": "Lynchburg, Tennessee",
+        "barrel": "Barrel # 25-01129, bottling date 3-11-25"
+      }
     }
   ]
 }
