@@ -1157,6 +1157,28 @@
         "notes": "Sweet and juicy wild blackberry flavor mixed with smooth Tennessee moonshine.",
         "mash": "Tennessee / Corn base with natural blackberry flavor"
       }
+    },
+    {
+      "name": "Ole Smoky Tennessee Moonshine Sour Razzin' Berry",
+      "category": "Gin, Vodka & Liqueurs",
+      "subCategory": "Flavored Moonshine",
+      "style": "Flavored Moonshine",
+      "proof": "40 Proof (20% ABV)",
+      "abv": "40 Proof (20% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Ole Smoky Distillery, Gatlinburg, Tennessee",
+      "origin": "Tennessee, USA / Spirits Distilled from Corn",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Tart, sour blue raspberry profile balanced with sweet corn moonshine base",
+        "mash": "Tennessee, USA / Spirits Distilled from Corn"
+      }
     }
   ]
 }
