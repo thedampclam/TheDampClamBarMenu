@@ -171,6 +171,29 @@
         "mash": "Sonoma County, California",
         "barrel": "Aged in French and American oak barrels"
       }
+    },
+    {
+      "name": "St. Julian Fruit Punch",
+      "category": "Wine",
+      "subCategory": "Fruit Wine",
+      "style": "Fruit Wine",
+      "proof": "40 Proof (20% ABV)",
+      "abv": "40 Proof (20% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Produced by St. Julian Winery & Distillery",
+      "origin": "Michigan, USA",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Sweet and vibrant fruit punch flavor with blended notes of cherry, grape, strawberry, raspberry, and apple.",
+        "mash": "Michigan, USA",
+        "barrel": "N/A"
+      }
     }
   ]
 }
