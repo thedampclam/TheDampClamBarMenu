@@ -263,6 +263,29 @@
         "mash": "Mendoza, Argentina",
         "barrel": "Oak aged"
       }
+    },
+    {
+      "name": "Belle Glos Clark & Telephone Pinot Noir 2023",
+      "category": "Wine",
+      "subCategory": "Pinot Noir",
+      "style": "Pinot Noir",
+      "proof": "14.9% ABV",
+      "abv": "14.9% ABV",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Producer: Belle Glos, Vintage: 2023, Vineyard: Clark & Telephone",
+      "origin": "Santa Maria Valley, Santa Barbara County, California",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Rich and opulent with luscious flavors of lush dark cherry, blackberry, toasted coconut, warm baking spices, and a smooth, lingering finish.",
+        "mash": "Santa Maria Valley, Santa Barbara County, California",
+        "barrel": "Aged in French oak barrels (60% new)"
+      }
     }
   ]
 }
