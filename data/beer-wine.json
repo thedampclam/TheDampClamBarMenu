@@ -240,6 +240,29 @@
         "mash": "Alicante D.O., Spain / 100% Moscatel de Alejandría",
         "barrel": "Stainless steel fermented"
       }
+    },
+    {
+      "name": "Colores del Sol Malbec Reserva 2015",
+      "category": "Wine",
+      "subCategory": "Malbec",
+      "style": "Malbec",
+      "proof": "13.5% ABV",
+      "abv": "13.5% ABV",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Producer: Colores del Sol, Vintage: 2015, Reserva",
+      "origin": "Mendoza, Argentina",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Expressive aromas of ripe plum, blackberry, and subtle spice with smooth tannins and oak notes.",
+        "mash": "Mendoza, Argentina",
+        "barrel": "Oak aged"
+      }
     }
   ]
 }
