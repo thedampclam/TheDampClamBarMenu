@@ -709,7 +709,7 @@
       "subCategory": "Pot Still & Malt"
     },
     {
-      "size": "1.75 L",
+      "size": "1.75 L, 750 mL",
       "details": "Ron Superior Carta Blanca",
       "proof": "80 Proof (40% ABV)",
       "name": "Bacardi Superior White Rum",
@@ -717,7 +717,12 @@
       "inStock": true,
       "isGifted": false,
       "category": "Rum & Aquavit",
-      "subCategory": "White Rum"
+      "subCategory": "White Rum",
+      "sizes": {
+        "1.75 L": 1,
+        "750 mL": 1
+      },
+      "quantity": 2
     },
     {
       "size": "500 mL",
