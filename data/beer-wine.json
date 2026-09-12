@@ -286,6 +286,29 @@
         "mash": "Santa Maria Valley, Santa Barbara County, California",
         "barrel": "Aged in French oak barrels (60% new)"
       }
+    },
+    {
+      "name": "Winking Owl Sangria",
+      "category": "Wine",
+      "subCategory": "Sangria",
+      "style": "Sangria",
+      "proof": "10% ABV",
+      "abv": "10% ABV",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Winking Owl Vineyards (Aldi Exclusive)",
+      "origin": "California, USA",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Sweet and fruity wine beverage featuring bright citrus flavors, ripe red berries, and a fresh, crisp finish.",
+        "mash": "California, USA",
+        "barrel": "N/A"
+      }
     }
   ]
 }
