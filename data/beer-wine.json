@@ -331,6 +331,30 @@
         "notes": "Crisp grape wine with natural green apple flavor.",
         "mash": "Grape wine with natural flavor (Green Apple)"
       }
+    },
+    {
+      "name": "Black Star Farms Arcturos Late Harvest Riesling 2016",
+      "category": "Wine",
+      "subCategory": "Late Harvest Riesling",
+      "style": "Late Harvest Riesling",
+      "proof": "9% ABV",
+      "abv": "9% ABV",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Black Star Farms, Vintage 2016",
+      "origin": "Michigan",
+      "isSpecial": false,
+      "isGifted": true,
+      "inStock": true,
+      "extra": {
+        "notes": "Late harvest white wine made from Riesling grapes, known for honeyed sweetness balanced by vibrant citrus acidity and ripe stone fruit flavors.",
+        "mash": "Michigan",
+        "barrel": "N/A",
+        "giftNotes": "Wedding present from Jarvis"
+      }
     }
   ]
 }
