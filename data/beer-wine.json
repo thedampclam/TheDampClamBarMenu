@@ -378,6 +378,29 @@
         "mash": "Leelanau Peninsula, Michigan, USA",
         "barrel": "N/A"
       }
+    },
+    {
+      "name": "André Brut California Champagne",
+      "category": "Wine",
+      "subCategory": "Sparkling Wine",
+      "style": "Sparkling Wine",
+      "proof": "10.5% ABV",
+      "abv": "10.5% ABV",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "André Champagne Cellars, Signature Collection, Charmat Method Sparkling Wine",
+      "origin": "California",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Fresh with notes of pear and lemon",
+        "mash": "California",
+        "barrel": "N/A"
+      }
     }
   ]
 }
