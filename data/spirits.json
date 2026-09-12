@@ -998,6 +998,30 @@
         "mash": "Single Malt",
         "barrel": "Bourbon, Sherry and Red Wine Casks"
       }
+    },
+    {
+      "name": "Knob Creek Single Barrel Reserve 9 Year Kentucky Straight Bourbon Whiskey",
+      "category": "Bourbon & American Whiskey",
+      "subCategory": "Single Barrel Bourbon",
+      "style": "Single Barrel Bourbon",
+      "proof": "120 Proof (60% ABV)",
+      "abv": "120 Proof (60% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Produced in Clermont, Kentucky by Knob Creek (Beam Suntory). Features custom bottle engraving reading 'Andre & Jess Kentucky 2024'.",
+      "origin": "Clermont, Kentucky / Traditional Bourbon Mash Bill (~75% Corn, 13% Rye, 12% Malted Barley)",
+      "isSpecial": true,
+      "isGifted": true,
+      "inStock": true,
+      "extra": {
+        "notes": "Robust and full-bodied with rich aromas of deep caramel, vanilla, dark fruit, heavy oak, and warm baking spices.",
+        "mash": "Clermont, Kentucky / Traditional Bourbon Mash Bill (~75% Corn, 13% Rye, 12% Malted Barley)",
+        "barrel": "Aged 9 Years in deeply charred new American oak barrels",
+        "giftNotes": "A gift to ourselves, on a Corvette trip to the bourbon trail. Etched with \"Andre & Jess Kentucky 2024\", and sealed in wax with Jess' thumb print."
+      }
     }
   ]
 }
