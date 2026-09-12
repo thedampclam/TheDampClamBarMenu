@@ -401,6 +401,29 @@
         "mash": "California",
         "barrel": "N/A"
       }
+    },
+    {
+      "name": "Wollersheim Winery Prairie Fumé 2023",
+      "category": "Wine",
+      "subCategory": "White Wine / Seyval Blanc",
+      "style": "White Wine / Seyval Blanc",
+      "proof": "10% ABV",
+      "abv": "10% ABV",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Produced & Bottled by Wollersheim Winery, Inc., Prairie du Sac, Wisconsin. Vintage 2023.",
+      "origin": "Prairie du Sac, Wisconsin / Seyval Grape",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Semi-dry white wine featuring fresh, crisp citrus and subtle tropical fruit flavors with a bright finish.",
+        "mash": "Prairie du Sac, Wisconsin / Seyval Grape",
+        "barrel": "Stainless steel tank fermented"
+      }
     }
   ]
 }
