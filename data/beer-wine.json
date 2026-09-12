@@ -355,6 +355,29 @@
         "barrel": "N/A",
         "giftNotes": "Wedding present from Jarvis"
       }
+    },
+    {
+      "name": "Marland Late Harvest Riesling 2019",
+      "category": "Wine",
+      "subCategory": "Riesling",
+      "style": "Riesling",
+      "proof": "N/A",
+      "abv": "N/A",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Marland Wines, 2019 Vintage",
+      "origin": "Leelanau Peninsula, Michigan, USA",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "A late harvest Riesling from Michigan's Leelanau Peninsula, typically offering rich, sweet fruit flavors balanced by vibrant natural acidity.",
+        "mash": "Leelanau Peninsula, Michigan, USA",
+        "barrel": "N/A"
+      }
     }
   ]
 }
