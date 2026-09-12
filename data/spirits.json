@@ -1135,6 +1135,28 @@
         "notes": "Sweet and tangy lemon citrus profile with a smooth, sweet moonshine finish.",
         "mash": "Tennessee, USA / Corn"
       }
+    },
+    {
+      "name": "Ole Smoky Blackberry Tennessee Moonshine (Friends of the Smokes commemorative jar)",
+      "category": "Bourbon & American Whiskey",
+      "subCategory": "Flavored Moonshine",
+      "style": "Flavored Moonshine",
+      "proof": "40 Proof (20% ABV)",
+      "abv": "40 Proof (20% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Ole Smoky Distillery, Gatlinburg, Tennessee",
+      "origin": "Tennessee / Corn base with natural blackberry flavor",
+      "isSpecial": true,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Sweet and juicy wild blackberry flavor mixed with smooth Tennessee moonshine.",
+        "mash": "Tennessee / Corn base with natural blackberry flavor"
+      }
     }
   ]
 }
