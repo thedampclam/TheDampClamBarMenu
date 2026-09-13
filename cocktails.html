@@ -1,4 +1,275 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Damp Clam — Cocktail Menu</title>
+  
+  <!-- Website Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="apple-touch-icon" href="logo.jpg" />
+
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0d2822 0%, #03140f 100%);
+      --card-bg: rgba(2, 22, 17, 0.75);
+      --neon-cyan: #00f7ff;
+      --neon-green: #39ff14;
+      --neon-purple: #c042ff;
+      --neon-pink: #ff2a8d;
+      --neon-gold: #ffd700;
+      --neon-red: #ff3344;
+      --gold-amber: #e5b567;
+      --off-white: #f8fafc;
+      --border: #16382c;
+      --font: "Georgia", Times, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--off-white);
+      padding: 1.5rem 1rem 3rem;
+      min-height: 100vh;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    nav.site-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--gold-amber);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.5rem 1.25rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.3);
+      transition: all 0.25s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--neon-cyan);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 12px rgba(0, 247, 255, 0.35);
+      background: rgba(0, 247, 255, 0.08);
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 7vw, 2.5rem);
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-shadow: 0 0 5px #fff, 0 0 20px var(--neon-cyan), 0 0 35px var(--neon-purple);
+    }
+
+    .stats {
+      font-size: 0.85rem;
+      color: var(--gold-amber);
+      background: var(--card-bg);
+      padding: 0.4rem 1.15rem;
+      border-radius: 20px;
+      border: 1px solid var(--gold-amber);
+      margin-top: 0.3rem;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .filter-btn {
+      background: transparent;
+      color: var(--gold-amber);
+      border: 1px solid var(--gold-amber);
+      padding: 0.45rem 1.2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover { background: rgba(229, 181, 103, 0.12); }
+
+    .filter-btn.active {
+      background: rgba(0, 247, 255, 0.1);
+      color: var(--neon-cyan);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 5px rgba(0, 247, 255, 0.6);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(0, 247, 255, 0.5);
+      box-shadow: 0 0 18px rgba(0, 247, 255, 0.2);
+    }
+
+    .card.out-of-stock {
+      opacity: 0.6;
+      border-color: rgba(255, 51, 68, 0.35);
+    }
+
+    .card.out-of-stock:hover {
+      border-color: var(--neon-red);
+      box-shadow: 0 0 15px rgba(255, 51, 68, 0.25);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-category {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--neon-pink);
+      font-weight: bold;
+    }
+
+    .badge-out {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(255, 51, 68, 0.25);
+      border: 1px solid var(--neon-red);
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-shadow: 0 0 5px var(--neon-red);
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      font-style: italic;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .card-details {
+      font-size: 0.85rem;
+      line-height: 1.55;
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+    }
+
+    .card-details div { margin-bottom: 0.4rem; }
+    .card-details strong { color: var(--gold-amber); }
+
+    .recipe-box {
+      background: rgba(0, 0, 0, 0.28);
+      border-left: 2px solid var(--neon-cyan);
+      padding: 0.45rem 0.65rem;
+      border-radius: 4px;
+      margin: 0.4rem 0;
+      font-family: inherit;
+      color: #e2e8f0;
+      font-size: 0.82rem;
+    }
+
+    .recipe-box strong {
+      color: var(--neon-cyan);
+      display: block;
+      margin-bottom: 0.2rem;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+    }
+
+    .missing-alert {
+      color: var(--neon-red);
+      font-size: 0.78rem;
+      font-style: italic;
+      margin-top: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="spirits.html" class="nav-link">Spirits & Whiskeys</a>
+      <a href="cocktails.html" class="nav-link active">Cocktail Menu</a>
+      <a href="beer-wine.html" class="nav-link">Beer & Wine</a>
+      <a href="merch.html" class="nav-link">Merch</a>
+    </nav>
+
+    <header>
+      <h1>Cocktail Menu</h1>
+      <div class="stats" id="totalCount">Total Cocktails: <strong>0</strong></div>
+    </header>
+
+    <div class="controls">
+      <div class="filters" id="filterContainer"></div>
+    </div>
+
+    <main class="grid" id="cocktailGrid"></main>
+  </div>
+
+  <script>
     let cocktails = [];
     let currentCategory = "All";
 
@@ -11,10 +282,18 @@
       "Mocktails & Zero-Proof"
     ];
 
+    const categoryWeight = {
+      "Seasonal": 1,
+      "House Signatures": 2,
+      "Classics": 3,
+      "Mule Collection": 4,
+      "Mocktails & Zero-Proof": 5
+    };
+
     async function init() {
       try {
         const res = await fetch("data/cocktails.json");
-        if (!res.ok) throw new Error("Could not fetch cocktails.json");
+        if (!res.ok) throw new Error("Could not fetch data/cocktails.json");
         const data = await res.json();
         cocktails = data.items || [];
         renderFilters();
@@ -22,8 +301,8 @@
       } catch (err) {
         console.error("Error loading cocktails:", err);
         document.getElementById("cocktailGrid").innerHTML = `
-          <div style="grid-column: 1 / -1; text-align: center; color: var(--neon-red);">
-            Failed to load cocktail menu. Please verify data/cocktails.json.
+          <div style="grid-column: 1 / -1; text-align: center; color: var(--neon-red); padding: 2rem;">
+            Failed to load cocktails. Verify that data/cocktails.json exists and is valid JSON.
           </div>
         `;
       }
@@ -46,62 +325,49 @@
 
     function renderGrid() {
       const grid = document.getElementById("cocktailGrid");
-      
-      // Filter list
       let filtered = cocktails.filter(c => currentCategory === "All" || c.category === currentCategory);
 
-      // Sort by defined category priority so "Seasonal" floats to the top when on "All"
-      const priorityMap = {
-        "Seasonal": 1,
-        "House Signatures": 2,
-        "Classics": 3,
-        "Mule Collection": 4,
-        "Mocktails & Zero-Proof": 5
-      };
-
+      // Sort so Seasonal items stay at the top when viewing 'All'
       filtered.sort((a, b) => {
-        const pA = priorityMap[a.category] || 99;
-        const pB = priorityMap[b.category] || 99;
-        return pA - pB;
+        const weightA = categoryWeight[a.category] || 99;
+        const weightB = categoryWeight[b.category] || 99;
+        return weightA - weightB;
       });
 
       document.getElementById("totalCount").innerHTML = `Total Cocktails: <strong>${cocktails.length}</strong>`;
 
       if (filtered.length === 0) {
-        grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; color: var(--gold-amber);">No cocktails found for this section.</div>`;
+        grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; color: var(--gold-amber); padding: 2rem;">No cocktails found for this section.</div>`;
         return;
       }
 
-      grid.innerHTML = filtered.map(c => {
-        const isSeasonal = c.category === "Seasonal";
-        const categoryColor = isSeasonal ? "color: var(--neon-gold); text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);" : "";
-
-        return `
-          <div class="card ${!c.inStock ? 'out-of-stock' : ''}">
-            <div>
-              <div class="card-top">
-                <span class="card-category" style="${categoryColor}">${isSeasonal ? "🍂 Seasonal Fall Special" : c.category}</span>
-                ${!c.inStock ? `<span class="badge-out">Out of Stock</span>` : ''}
-              </div>
-              <div class="card-title">${c.name}</div>
-              <div class="card-desc">${c.desc || ''}</div>
+      grid.innerHTML = filtered.map(c => `
+        <div class="card ${!c.inStock ? 'out-of-stock' : ''}">
+          <div>
+            <div class="card-top">
+              <span class="card-category">${c.category}</span>
+              ${!c.inStock ? `<span class="badge-out">Out of Stock</span>` : ''}
             </div>
-
-            <div class="card-details">
-              ${c.recipe ? `
-              <div class="recipe-box">
-                <strong>Spec / Recipe:</strong>
-                ${c.recipe}
-              </div>` : ''}
-              ${c.ingredients ? `<div><strong>Ingredients:</strong> ${c.ingredients}</div>` : ''}
-              ${c.glass ? `<div><strong>Glassware:</strong> ${c.glass}</div>` : ''}
-              ${c.garnish ? `<div><strong>Garnish:</strong> ${c.garnish}</div>` : ''}
-              ${c.missingReason ? `<div class="missing-alert">${c.missingReason}</div>` : ''}
-            </div>
+            <div class="card-title">${c.name}</div>
+            <div class="card-desc">${c.desc || ''}</div>
           </div>
-        `;
-      }).join("");
+          ${(c.recipe || c.ingredients || c.glass || c.garnish || c.missingReason) ? `
+          <div class="card-details">
+            ${c.recipe ? `
+            <div class="recipe-box">
+              <strong>Spec / Recipe:</strong>
+              ${c.recipe}
+            </div>` : ''}
+            ${c.ingredients ? `<div><strong>Ingredients:</strong> ${c.ingredients}</div>` : ''}
+            ${c.glass ? `<div><strong>Glassware:</strong> ${c.glass}</div>` : ''}
+            ${c.garnish ? `<div><strong>Garnish:</strong> ${c.garnish}</div>` : ''}
+            ${c.missingReason ? `<div class="missing-alert">${c.missingReason}</div>` : ''}
+          </div>` : ''}
+        </div>
+      `).join("");
     }
 
     document.addEventListener("DOMContentLoaded", init);
   </script>
+</body>
+</html>
