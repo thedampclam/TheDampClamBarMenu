@@ -5,9 +5,12 @@
       "category": "Beer",
       "style": "Transfusion",
       "abv": "4.8% ABV",
-      "origin": "Madison, WI",
+      "origin": "Young Blood Beer Co., Madison, WI",
       "details": "Gluten free sour transfusion with concord grape, lime, and organic cold pressed ginger.",
       "inStock": true,
+      "extra": {
+        "notes": "Gluten free sour transfusion with concord grape, lime, and organic cold pressed ginger."
+      }
       "sizes": {
         "Can": 8
       },
@@ -15,17 +18,17 @@
       "size": "Can"
     },
     {
-      "name": "Itcs Britney B*tch",
+      "name": "It's Britney B*tch",
       "category": "Hard Seltzer",
-      "style": "Sangria",
+      "style": "Peach White Sangria",
       "abv": "6% ABV",
-      "origin": "Madison, WI",
-      "details": "Peach white sangria.",
+      "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
+      "origin": "Door County, Wisconsin",
       "inStock": true,
       "sizes": {
-        "Can": 4
+        "Can": 5
       },
-      "quantity": 4
+      "quantity": 5
     },
     {
       "name": "Bell's Oberon Ale",
