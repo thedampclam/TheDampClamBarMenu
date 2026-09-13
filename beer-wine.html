@@ -1,296 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Damp Clam — Beer & Wine</title>
-  
-  <link rel="icon" type="image/jpeg" href="logo.jpg" />
-  <link rel="apple-touch-icon" href="logo.jpg" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beer & Wine | The Damp Clam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-gradient: linear-gradient(135deg, #0d2822 0%, #03140f 100%);
-      --card-bg: rgba(2, 22, 17, 0.75);
-      --neon-cyan: #00f7ff;
-      --neon-green: #39ff14;
-      --neon-purple: #c042ff;
-      --neon-pink: #ff2a8d;
-      --neon-gold: #ffd700;
-      --neon-red: #ff3344;
-      --gold-amber: #e5b567;
-      --off-white: #f8fafc;
-      --border: #16382c;
-      --font: "Georgia", Times, serif;
+      --bg-color: #0d0f12;
+      --card-bg: #161a22;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #e5a93b;
+      --accent-soft: rgba(229, 169, 59, 0.15);
+      --text-main: #f0f2f5;
+      --text-muted: #9ba3af;
+      --stock-in: #4ade80;
+      --stock-out: #f87171;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      font-family: var(--font);
-      background-image: var(--bg-gradient);
-      background-attachment: fixed;
-      color: var(--off-white);
-      padding: 1.5rem 1rem 3rem;
-      min-height: 100vh;
-    }
-
-    .container { max-width: 1100px; margin: 0 auto; }
-
-    nav.site-nav {
-      display: flex;
-      justify-content: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: var(--gold-amber);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 0.5rem 1.25rem;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: rgba(0, 0, 0, 0.3);
-      transition: all 0.25s ease;
-    }
-
-    .nav-link:hover, .nav-link.active {
-      color: var(--neon-cyan);
-      border-color: var(--neon-cyan);
-      box-shadow: 0 0 12px rgba(0, 247, 255, 0.35);
-      background: rgba(0, 247, 255, 0.08);
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding-bottom: 60px;
     }
 
     header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
+      padding: 48px 20px 24px;
     }
 
     h1 {
-      font-size: clamp(1.8rem, 7vw, 2.5rem);
-      font-weight: 700;
-      color: #fff;
+      font-family: 'Cinzel', serif;
+      font-size: 2.6rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 6px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      text-shadow: 0 0 5px #fff, 0 0 20px var(--neon-cyan), 0 0 35px var(--neon-purple);
     }
 
-    .stats {
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--accent);
+      text-decoration: none;
       font-size: 0.85rem;
-      color: var(--gold-amber);
-      background: var(--card-bg);
-      padding: 0.4rem 1.15rem;
-      border-radius: 20px;
-      border: 1px solid var(--gold-amber);
-      margin-top: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: opacity 0.2s;
     }
 
-    .controls {
+    .nav-link:hover {
+      opacity: 0.8;
+    }
+
+    .controls-container {
+      max-width: 1100px;
+      margin: 0 auto 30px;
+      padding: 0 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.25rem;
-      margin-bottom: 2.5rem;
+      gap: 16px;
     }
 
-    .filters {
+    .search-input {
+      width: 100%;
+      max-width: 440px;
+      padding: 12px 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+    }
+
+    .filter-bar {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.6rem;
+      gap: 10px;
     }
 
     .filter-btn {
-      background: transparent;
-      color: var(--gold-amber);
-      border: 1px solid var(--gold-amber);
-      padding: 0.45rem 1.2rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 8px 20px;
       border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
       cursor: pointer;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-family: inherit;
       transition: all 0.2s ease;
     }
 
-    .filter-btn:hover { background: rgba(229, 181, 103, 0.12); }
-
+    .filter-btn:hover,
     .filter-btn.active {
-      background: rgba(0, 247, 255, 0.1);
-      color: var(--neon-cyan);
-      border-color: var(--neon-cyan);
-      box-shadow: 0 0 5px rgba(0, 247, 255, 0.6);
+      background: var(--accent);
+      color: #111;
+      border-color: var(--accent);
+      font-weight: 600;
     }
 
-    .grid {
+    .sub-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sub-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 5px 14px;
+      border-radius: 16px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .sub-pill:hover,
+    .sub-pill.active {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .menu-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
     }
 
-    .card {
+    .menu-card {
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.35rem;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      transition: all 0.25s ease;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .card:hover {
-      border-color: rgba(0, 247, 255, 0.5);
-      box-shadow: 0 0 18px rgba(0, 247, 255, 0.2);
+    .menu-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(229, 169, 59, 0.3);
     }
 
-    .card.out-of-stock {
+    .menu-card.out-of-stock {
       opacity: 0.6;
-      border-color: rgba(255, 51, 68, 0.35);
     }
 
-    .card-top {
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .item-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .badge-sub {
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(229, 169, 59, 0.3);
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .meta-tag {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--card-border);
+    }
+
+    .item-desc {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .card-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.5rem;
+      border-top: 1px solid var(--card-border);
+      padding-top: 14px;
+      margin-top: 8px;
     }
 
-    .card-category {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--neon-pink);
-      font-weight: bold;
+    .stock-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
     }
 
-    .badge-out {
-      font-size: 0.65rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #fff;
-      background: rgba(255, 51, 68, 0.25);
-      border: 1px solid var(--neon-red);
-      padding: 1px 7px;
-      border-radius: 10px;
-      font-weight: bold;
-      text-shadow: 0 0 5px var(--neon-red);
+    .stock-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
     }
 
-    .card-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.4rem;
+    .stock-badge.in {
+      color: var(--stock-in);
+    }
+    .stock-badge.in .stock-dot {
+      background: var(--stock-in);
+      box-shadow: 0 0 6px rgba(74, 222, 128, 0.6);
     }
 
-    .card-details {
-      font-size: 0.85rem;
-      line-height: 1.55;
-      border-top: 1px solid var(--border);
-      padding-top: 0.75rem;
-      margin-top: 0.5rem;
+    .stock-badge.out {
+      color: var(--stock-out);
+    }
+    .stock-badge.out .stock-dot {
+      background: var(--stock-out);
     }
 
-    .card-details div { margin-bottom: 0.35rem; }
-    .card-details strong { color: var(--gold-amber); }
+    .item-volume {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 50px 20px;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <nav class="site-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="spirits.html" class="nav-link">Spirits & Whiskeys</a>
-      <a href="cocktails.html" class="nav-link">Cocktail Menu</a>
-      <a href="beer-wine.html" class="nav-link active">Beer & Wine</a>
-      <a href="merch.html" class="nav-link">Merch</a>
-    </nav>
 
-    <header>
-      <h1>Beer & Wine</h1>
-      <div class="stats" id="totalCount">Total Items: <strong>0</strong></div>
-    </header>
+  <header>
+    <h1>The Damp Clam</h1>
+    <p class="subtitle">Beer, Hard Seltzer & Cellar Wine Selections</p>
+    <a href="index.html" class="nav-link">← Return to Main Bar Menu</a>
+  </header>
 
-    <div class="controls">
-      <div class="filters" id="filterContainer"></div>
+  <div class="controls-container">
+    <input type="text" id="search-bar" class="search-input" placeholder="Search by name, style, brewery...">
+
+    <div class="filter-bar" id="category-filters">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="Beer">Beer</button>
+      <button class="filter-btn" data-category="Hard Seltzer">Hard Seltzers</button>
+      <button class="filter-btn" data-category="Wine">Wine</button>
     </div>
 
-    <main class="grid" id="beerWineGrid"></main>
+    <div class="sub-filter-bar" id="sub-filters" style="display: none;"></div>
   </div>
 
+  <main class="menu-grid" id="menu-grid">
+    <div class="no-results">Loading cellar inventory...</div>
+  </main>
+
   <script>
-    let beerWineItems = [];
-    let currentCategory = "All";
+    let allItems = [];
+    let activeCategory = 'all';
+    let activeSubCategory = 'all';
+    let searchQuery = '';
 
-    async function loadDataAndInit() {
+    async function initInventory() {
       try {
-        const res = await fetch("data/beer-wine.json");
-        const data = await res.json();
-        beerWineItems = data.items || [];
+        const response = await fetch('data/beer-wine.json');
+        if (!response.ok) throw new Error('Failed to load beer-wine.json');
+        const data = await response.json();
+        allItems = data.items || [];
+        setupEventListeners();
+        renderMenu();
       } catch (err) {
-        console.error("Error loading beer and wine data:", err);
+        document.getElementById('menu-grid').innerHTML = `
+          <div class="no-results" style="color: var(--stock-out);">
+            Failed to load selections. Please check data/beer-wine.json.
+          </div>
+        `;
+        console.error(err);
       }
-      init();
     }
 
-    function init() {
-      renderFilters();
-      renderGrid();
+    function setupEventListeners() {
+      // Main Category Filter Click
+      const catButtons = document.querySelectorAll('#category-filters .filter-btn');
+      catButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          catButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeCategory = btn.dataset.category;
+          activeSubCategory = 'all'; // reset subcategory on top category toggle
+          buildSubCategoryPills();
+          renderMenu();
+        });
+      });
+
+      // Search Bar
+      const searchBar = document.getElementById('search-bar');
+      searchBar.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        renderMenu();
+      });
     }
 
-    function renderFilters() {
-      const categories = ["All", "Beer", "Wine"];
-      const container = document.getElementById("filterContainer");
-      container.innerHTML = categories
-        .map(cat => `<button class="filter-btn ${cat === currentCategory ? "active" : ""}" data-category="${cat}">${cat}</button>`)
-        .join("");
+    function buildSubCategoryPills() {
+      const subContainer = document.getElementById('sub-filters');
 
-      container.querySelectorAll(".filter-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          currentCategory = btn.dataset.category;
-          renderFilters();
-          renderGrid();
+      if (activeCategory === 'all') {
+        subContainer.style.display = 'none';
+        subContainer.innerHTML = '';
+        return;
+      }
+
+      // Extract unique subcategories for the active primary category
+      const subCategories = Array.from(
+        new Set(
+          allItems
+            .filter(item => item.category === activeCategory && item.subCategory)
+            .map(item => item.subCategory)
+        )
+      ).sort();
+
+      if (subCategories.length === 0) {
+        subContainer.style.display = 'none';
+        subContainer.innerHTML = '';
+        return;
+      }
+
+      subContainer.style.display = 'flex';
+      subContainer.innerHTML = `
+        <button class="sub-pill ${activeSubCategory === 'all' ? 'active' : ''}" data-sub="all">All ${activeCategory}</button>
+        ${subCategories.map(sub => `
+          <button class="sub-pill ${activeSubCategory === sub ? 'active' : ''}" data-sub="${sub}">${sub}</button>
+        `).join('')}
+      `;
+
+      subContainer.querySelectorAll('.sub-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          subContainer.querySelectorAll('.sub-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          activeSubCategory = pill.dataset.sub;
+          renderMenu();
         });
       });
     }
 
-    function renderGrid() {
-      const grid = document.getElementById("beerWineGrid");
-      const filtered = beerWineItems.filter(item => currentCategory === "All" || item.category === currentCategory);
+    function renderMenu() {
+      const container = document.getElementById('menu-grid');
 
-      document.getElementById("totalCount").innerHTML = `Total Items: <strong>${beerWineItems.length}</strong>`;
+      const filtered = allItems.filter(item => {
+        const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
+        const matchesSub = activeSubCategory === 'all' || item.subCategory === activeSubCategory;
 
-      grid.innerHTML = filtered.map(item => `
-        <div class="card ${!item.inStock ? 'out-of-stock' : ''}">
-          <div>
-            <div class="card-top">
-              <span class="card-category">${item.category}</span>
-              ${!item.inStock ? `<span class="badge-out">Out of Stock</span>` : ''}
+        let matchesSearch = true;
+        if (searchQuery) {
+          const haystack = [
+            item.name,
+            item.category,
+            item.subCategory,
+            item.style,
+            item.origin,
+            item.details,
+            item.extra?.notes
+          ].filter(Boolean).join(' ').toLowerCase();
+
+          matchesSearch = haystack.includes(searchQuery);
+        }
+
+        return matchesCategory && matchesSub && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="no-results">No selections match your current filter.</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => {
+        const displayDescription = item.extra?.notes || item.details || '';
+        const displayAbv = item.abv && item.abv !== 'N/A' ? item.abv : (item.proof || '');
+        const displayStyle = item.style || item.subCategory || item.category;
+        const displaySize = item.size || (item.sizes ? Object.keys(item.sizes)[0] : '');
+
+        return `
+          <article class="menu-card ${!item.inStock ? 'out-of-stock' : ''}">
+            <div>
+              <div class="card-header">
+                <h2 class="item-title">${item.name}</h2>
+                ${item.subCategory ? `<span class="badge-sub">${item.subCategory}</span>` : ''}
+              </div>
+
+              <div class="meta-row">
+                <span class="meta-tag">${displayStyle}</span>
+                ${item.origin ? `<span class="meta-tag">${item.origin}</span>` : ''}
+                ${displayAbv ? `<span class="meta-tag">${displayAbv}</span>` : ''}
+              </div>
+
+              <p class="item-desc">${displayDescription}</p>
             </div>
-            <div class="card-title">${item.name}</div>
-          </div>
-          <div class="card-details">
-            <div><strong>Style / Type:</strong> ${item.style || "N/A"}</div>
-            <div><strong>ABV:</strong> ${item.abv || "N/A"}</div>
-            <div><strong>Origin:</strong> ${item.origin || "N/A"}</div>
-            <div><strong>Notes:</strong> ${item.details || "N/A"}</div>
-          </div>
-        </div>
-      `).join("");
+
+            <div class="card-footer">
+              ${
+                item.inStock
+                  ? `<div class="stock-badge in"><span class="stock-dot"></span> In Stock ${item.quantity !== undefined ? `(${item.quantity})` : ''}</div>`
+                  : `<div class="stock-badge out"><span class="stock-dot"></span> Out of Stock</div>`
+              }
+              ${displaySize ? `<span class="item-volume">${displaySize}</span>` : ''}
+            </div>
+          </article>
+        `;
+      }).join('');
     }
 
-    loadDataAndInit();
+    document.addEventListener('DOMContentLoaded', initInventory);
   </script>
 </body>
 </html>
