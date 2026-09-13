@@ -2,7 +2,8 @@
   "items": [
     {
       "name": "Pony Club",
-      "category": "Beer",
+      "category": "Hard Seltzer",
+      "subCategory": "Transfusion",
       "style": "Transfusion",
       "abv": "4.8% ABV",
       "origin": "Young Blood Beer Co., Madison, WI",
@@ -20,15 +21,34 @@
     {
       "name": "It's Britney B*tch",
       "category": "Hard Seltzer",
+      "subCategory": "Sangria",
       "style": "Peach White Sangria",
       "abv": "6% ABV",
-      "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
       "origin": "Door County, Wisconsin",
+      "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
       "inStock": true,
       "sizes": {
         "Can": 5
       },
       "quantity": 5
+    },
+    {
+      "name": "Peach Barn Do You Like Dragons?",
+      "category": "Hard Seltzer",
+      "subCategory": "Fruit Seltzer",
+      "style": "Mixed Berry Hard Seltzer",
+      "abv": "N/A",
+      "size": "16 oz Can",
+      "sizes": {
+        "16 oz Can": 2
+      },
+      "quantity": 2,
+      "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
+      "origin": "Door County, Wisconsin",
+      "inStock": true,
+      "extra": {
+        "notes": "Crisp and refreshing craft hard seltzer infused with wild mixed berries."
+      }
     },
     {
       "name": "Bell's Oberon Ale",
@@ -193,24 +213,6 @@
       }
     },
     {
-      "name": "Peach Barn Do You Like Dragons?",
-      "category": "Hard Seltzer",
-      "subCategory": "Seltzer",
-      "style": "Mixed Berry Hard Seltzer",
-      "abv": "N/A",
-      "size": "16 oz Can",
-      "sizes": {
-        "16 oz Can": 2
-      },
-      "quantity": 2,
-      "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
-      "origin": "Door County, Wisconsin",
-      "inStock": true,
-      "extra": {
-        "notes": "Crisp and refreshing craft hard seltzer infused with wild mixed berries."
-      }
-    },
-    {
       "name": "Young Blood The Brothers McMuffin",
       "category": "Beer",
       "subCategory": "Sour",
@@ -303,6 +305,7 @@
     {
       "name": "Cabernet Sauvignon",
       "category": "Wine",
+      "subCategory": "Red Wine",
       "style": "Red Wine",
       "abv": "14.2% ABV",
       "origin": "California, USA",
@@ -312,6 +315,7 @@
     {
       "name": "Crisp Sauvignon Blanc",
       "category": "Wine",
+      "subCategory": "White Wine",
       "style": "White Wine",
       "abv": "12.5% ABV",
       "origin": "Marlborough, NZ",
@@ -321,6 +325,7 @@
     {
       "name": "Prosecco DOC",
       "category": "Wine",
+      "subCategory": "Sparkling Wine",
       "style": "Sparkling Wine",
       "abv": "11.0% ABV",
       "origin": "Veneto, Italy",
@@ -379,7 +384,7 @@
     {
       "name": "Traverse Bay Winery Cherry Wine Sangria",
       "category": "Wine",
-      "subCategory": "Sangria / Fruit Wine",
+      "subCategory": "Sangria",
       "style": "Sangria / Fruit Wine",
       "proof": "11.8%",
       "abv": "11.8%",
@@ -678,7 +683,7 @@
     {
       "name": "Wollersheim Winery Prairie Fumé 2023",
       "category": "Wine",
-      "subCategory": "White Wine / Seyval Blanc",
+      "subCategory": "White Wine",
       "style": "White Wine / Seyval Blanc",
       "proof": "10% ABV",
       "abv": "10% ABV",
