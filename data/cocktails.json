@@ -41,6 +41,48 @@
       "inStock": true
     },
     {
+      "name": "Hugo 75",
+      "category": "House Signatures",
+      "desc": "Empress 1908 Indigo Gin, elderflower liqueur, fresh lime juice, simple syrup & fresh mint, topped with dry sparkling wine.",
+      "inStock": true
+    },
+    {
+      "name": "Apple Cider Mule",
+      "category": "Seasonal",
+      "desc": "Smirnoff Green Apple vodka, apple cider, lime juice & ginger beer.",
+      "inStock": true
+    },
+    {
+      "name": "Pumpkin Spice Espresso Martini",
+      "category": "Seasonal",
+      "desc": "Pumpkin vodka, Kahlua & espresso. Finished with a dash of pumpkin spice & espresso beans.",
+      "inStock": true
+    },
+    {
+      "name": "Maple Old Fashioned",
+      "category": "Seasonal",
+      "desc": "A smooth blend of bourbon, maple syrup & aromatic bitters, finished with an orange twist.",
+      "inStock": true
+    },
+    {
+      "name": "Cinnamon White Russian",
+      "category": "Seasonal",
+      "desc": "A creamy blend of vodka, coffee liqueur & house made cinnamon syrup finished with cream.",
+      "inStock": true
+    },
+    {
+      "name": "Autumn Hugo Spritz",
+      "category": "Seasonal",
+      "desc": "A crisp, refreshing blend of Prosecco, elderflower liqueur, cranberry juice & sparkling water, finished with fresh mint & splash of lime juice.",
+      "inStock": true
+    },
+    {
+      "name": "Long Island Apple Iced Tea",
+      "category": "Seasonal",
+      "desc": "Apple vodka, triple sec, gin, white rum & tequila. Topped with apple cider & a splash of Starry. (Limit 2 per visit)",
+      "inStock": true
+    },
+    {
       "name": "Gold Rush",
       "category": "Classics",
       "desc": "Modern speakeasy classic marrying rich bourbon with sweet honey and freshly squeezed lemon.",
