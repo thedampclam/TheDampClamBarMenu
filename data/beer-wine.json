@@ -58,10 +58,10 @@
       "abv": "5.8% ABV",
       "size": "12 oz Can",
       "sizes": {
-        "12 oz Can": 5
+        "12 oz Can": 20
       },
-      "quantity": 5,
-      "details": "Bell's Brewery, Comstock, Michigan",
+      "quantity": 20,
+      "details": "Classic citrusy, smooth, and refreshing American wheat ale brewed with Bell's signature house yeast.",
       "origin": "Comstock, Michigan",
       "inStock": true,
       "extra": {
