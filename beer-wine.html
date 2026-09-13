@@ -1,412 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beer & Wine | The Damp Clam</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Damp Clam — Beer & Wine</title>
+  
+  <!-- Website Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="apple-touch-icon" href="logo.jpg" />
+
   <style>
     :root {
-      --bg-color: #0d0f12;
-      --card-bg: #161a22;
-      --card-border: rgba(255, 255, 255, 0.08);
-      --accent: #e5a93b;
-      --accent-soft: rgba(229, 169, 59, 0.15);
-      --text-main: #f0f2f5;
-      --text-muted: #9ba3af;
-      --stock-in: #4ade80;
-      --stock-out: #f87171;
+      --bg-gradient: linear-gradient(135deg, #0d2822 0%, #03140f 100%);
+      --card-bg: rgba(2, 22, 17, 0.75);
+      --neon-cyan: #00f7ff;
+      --neon-green: #39ff14;
+      --neon-purple: #c042ff;
+      --neon-pink: #ff2a8d;
+      --neon-gold: #ffd700;
+      --neon-red: #ff3344;
+      --gold-amber: #e5b567;
+      --off-white: #f8fafc;
+      --border: #16382c;
+      --font: "Georgia", Times, serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      padding-bottom: 60px;
+      font-family: var(--font);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--off-white);
+      padding: 1.5rem 1rem 3rem;
+      min-height: 100vh;
     }
 
-    header {
-      text-align: center;
-      padding: 48px 20px 24px;
-    }
+    .container { max-width: 1100px; margin: 0 auto; }
 
-    h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 2.6rem;
-      letter-spacing: 2px;
-      color: var(--accent);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-    }
-
-    .subtitle {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      letter-spacing: 1px;
+    nav.site-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-link {
-      display: inline-block;
-      margin-top: 14px;
-      color: var(--accent);
       text-decoration: none;
+      color: var(--gold-amber);
       font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      transition: opacity 0.2s;
+      letter-spacing: 0.1em;
+      padding: 0.5rem 1.25rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.3);
+      transition: all 0.25s ease;
     }
 
-    .nav-link:hover {
-      opacity: 0.8;
+    .nav-link:hover, .nav-link.active {
+      color: var(--neon-cyan);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 12px rgba(0, 247, 255, 0.35);
+      background: rgba(0, 247, 255, 0.08);
     }
 
-    .controls-container {
-      max-width: 1100px;
-      margin: 0 auto 30px;
-      padding: 0 20px;
+    header {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      text-align: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 7vw, 2.5rem);
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-shadow: 0 0 5px #fff, 0 0 20px var(--neon-cyan), 0 0 35px var(--neon-purple);
+    }
+
+    .stats {
+      font-size: 0.85rem;
+      color: var(--gold-amber);
+      background: var(--card-bg);
+      padding: 0.4rem 1.15rem;
+      border-radius: 20px;
+      border: 1px solid var(--gold-amber);
+      margin-top: 0.3rem;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
     }
 
     .search-input {
       width: 100%;
-      max-width: 440px;
-      padding: 12px 18px;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      color: var(--text-main);
-      font-size: 0.95rem;
+      max-width: 420px;
+      padding: 0.6rem 1.25rem;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--off-white);
+      font-family: inherit;
+      font-size: 0.9rem;
       outline: none;
-      transition: border-color 0.2s;
+      transition: all 0.25s ease;
     }
 
     .search-input:focus {
-      border-color: var(--accent);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 8px rgba(0, 247, 255, 0.3);
     }
 
-    .filter-bar {
+    .filters {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      gap: 0.6rem;
     }
 
     .filter-btn {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      color: var(--text-muted);
-      padding: 8px 20px;
+      background: transparent;
+      color: var(--gold-amber);
+      border: 1px solid var(--gold-amber);
+      padding: 0.45rem 1.2rem;
       border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
       cursor: pointer;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: inherit;
       transition: all 0.2s ease;
     }
 
-    .filter-btn:hover,
+    .filter-btn:hover { background: rgba(229, 181, 103, 0.12); }
+
     .filter-btn.active {
-      background: var(--accent);
-      color: #111;
-      border-color: var(--accent);
-      font-weight: 600;
+      background: rgba(0, 247, 255, 0.1);
+      color: var(--neon-cyan);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 5px rgba(0, 247, 255, 0.6);
     }
 
     .sub-filter-bar {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 8px;
+      gap: 0.5rem;
       width: 100%;
-      animation: fadeIn 0.25s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-4px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .sub-pill {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--card-border);
-      color: var(--text-muted);
-      padding: 5px 14px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      color: var(--off-white);
+      padding: 0.35rem 0.9rem;
       border-radius: 16px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-family: inherit;
       cursor: pointer;
       transition: all 0.2s ease;
     }
 
     .sub-pill:hover,
     .sub-pill.active {
-      background: var(--accent-soft);
-      border-color: var(--accent);
-      color: var(--accent);
-      font-weight: 600;
+      background: rgba(192, 66, 255, 0.15);
+      border-color: var(--neon-purple);
+      color: var(--neon-purple);
+      box-shadow: 0 0 6px rgba(192, 66, 255, 0.4);
     }
 
-    .menu-grid {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 20px;
+      gap: 1.25rem;
     }
 
-    .menu-card {
+    .card {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      position: relative;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      transition: all 0.25s ease;
     }
 
-    .menu-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(229, 169, 59, 0.3);
+    .card:hover {
+      border-color: rgba(0, 247, 255, 0.5);
+      box-shadow: 0 0 18px rgba(0, 247, 255, 0.2);
     }
 
-    .menu-card.out-of-stock {
+    .card.out-of-stock {
       opacity: 0.6;
+      border-color: rgba(255, 51, 68, 0.35);
     }
 
-    .card-header {
+    .card.out-of-stock:hover {
+      border-color: var(--neon-red);
+      box-shadow: 0 0 15px rgba(255, 51, 68, 0.25);
+    }
+
+    .card-top {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 8px;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      gap: 0.5rem;
     }
 
-    .item-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.15rem;
-      color: var(--text-main);
-      line-height: 1.3;
+    .card-category {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--neon-pink);
+      font-weight: bold;
     }
 
     .badge-sub {
-      font-size: 0.72rem;
-      padding: 3px 8px;
-      border-radius: 10px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      border: 1px solid rgba(229, 169, 59, 0.3);
-      white-space: nowrap;
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      color: var(--neon-cyan);
+      background: rgba(0, 247, 255, 0.1);
+      border: 1px solid rgba(0, 247, 255, 0.4);
+      padding: 2px 7px;
+      border-radius: 10px;
+      white-space: nowrap;
     }
 
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
+    .badge-out {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(255, 51, 68, 0.25);
+      border: 1px solid var(--neon-red);
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-shadow: 0 0 5px var(--neon-red);
     }
 
-    .meta-tag {
-      background: rgba(255, 255, 255, 0.04);
-      padding: 2px 8px;
-      border-radius: 4px;
-      border: 1px solid var(--card-border);
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.5rem;
     }
 
-    .item-desc {
-      font-size: 0.88rem;
+    .card-desc {
+      font-size: 0.85rem;
       color: #cbd5e1;
-      margin-bottom: 18px;
-      flex-grow: 1;
+      font-style: italic;
+      margin-bottom: 1rem;
+      line-height: 1.4;
     }
+
+    .card-details {
+      font-size: 0.85rem;
+      line-height: 1.55;
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+    }
+
+    .card-details div { margin-bottom: 0.4rem; }
+    .card-details strong { color: var(--gold-amber); }
 
     .card-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid var(--card-border);
-      padding-top: 14px;
-      margin-top: 8px;
-    }
-
-    .stock-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      margin-top: 0.75rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid rgba(22, 56, 44, 0.6);
       font-size: 0.8rem;
-      font-weight: 500;
     }
 
-    .stock-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
+    .stock-tag-in {
+      color: var(--neon-green);
+      font-weight: bold;
+      text-shadow: 0 0 6px rgba(57, 255, 20, 0.3);
     }
 
-    .stock-badge.in {
-      color: var(--stock-in);
-    }
-    .stock-badge.in .stock-dot {
-      background: var(--stock-in);
-      box-shadow: 0 0 6px rgba(74, 222, 128, 0.6);
+    .stock-tag-out {
+      color: var(--neon-red);
+      font-weight: bold;
     }
 
-    .stock-badge.out {
-      color: var(--stock-out);
-    }
-    .stock-badge.out .stock-dot {
-      background: var(--stock-out);
-    }
-
-    .item-volume {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .no-results {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 50px 20px;
-      color: var(--text-muted);
-      font-size: 1rem;
+    .size-tag {
+      color: var(--gold-amber);
+      font-size: 0.75rem;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="spirits.html" class="nav-link">Spirits & Whiskeys</a>
+      <a href="cocktails.html" class="nav-link">Cocktail Menu</a>
+      <a href="beer-wine.html" class="nav-link active">Beer & Wine</a>
+      <a href="merch.html" class="nav-link">Merch</a>
+    </nav>
 
-  <header>
-    <h1>The Damp Clam</h1>
-    <p class="subtitle">Beer, Hard Seltzer & Cellar Wine Selections</p>
-    <a href="index.html" class="nav-link">← Return to Main Bar Menu</a>
-  </header>
+    <header>
+      <h1>Beer & Wine</h1>
+      <div class="stats" id="totalCount">Total Selections: <strong>0</strong></div>
+    </header>
 
-  <div class="controls-container">
-    <input type="text" id="search-bar" class="search-input" placeholder="Search by name, style, brewery...">
-
-    <div class="filter-bar" id="category-filters">
-      <button class="filter-btn active" data-category="all">All</button>
-      <button class="filter-btn" data-category="Beer">Beer</button>
-      <button class="filter-btn" data-category="Hard Seltzer">Hard Seltzers</button>
-      <button class="filter-btn" data-category="Wine">Wine</button>
+    <div class="controls">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search by name, brewery, style..." />
+      <div class="filters" id="categoryFilterContainer"></div>
+      <div class="sub-filter-bar" id="subFilterContainer" style="display: none;"></div>
     </div>
 
-    <div class="sub-filter-bar" id="sub-filters" style="display: none;"></div>
+    <main class="grid" id="beerWineGrid"></main>
   </div>
-
-  <main class="menu-grid" id="menu-grid">
-    <div class="no-results">Loading cellar inventory...</div>
-  </main>
 
   <script>
     let allItems = [];
-    let activeCategory = 'all';
-    let activeSubCategory = 'all';
-    let searchQuery = '';
+    let currentCategory = "All";
+    let currentSubCategory = "All";
+    let searchQuery = "";
 
-    async function initInventory() {
+    const categories = ["All", "Beer", "Hard Seltzer", "Wine"];
+
+    async function init() {
       try {
-        const response = await fetch('data/beer-wine.json');
-        if (!response.ok) throw new Error('Failed to load beer-wine.json');
-        const data = await response.json();
+        const res = await fetch("data/beer-wine.json");
+        if (!res.ok) throw new Error("Could not fetch data/beer-wine.json");
+        const data = await res.json();
         allItems = data.items || [];
-        setupEventListeners();
-        renderMenu();
+        renderFilters();
+        renderGrid();
       } catch (err) {
-        document.getElementById('menu-grid').innerHTML = `
-          <div class="no-results" style="color: var(--stock-out);">
-            Failed to load selections. Please check data/beer-wine.json.
+        console.error("Error loading beer & wine:", err);
+        document.getElementById("beerWineGrid").innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; color: var(--neon-red);">
+            Failed to load beer & wine inventory. Please verify data/beer-wine.json.
           </div>
         `;
-        console.error(err);
       }
+
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        renderGrid();
+      });
     }
 
-    function setupEventListeners() {
-      // Main Category Filter Click
-      const catButtons = document.querySelectorAll('#category-filters .filter-btn');
-      catButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          catButtons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          activeCategory = btn.dataset.category;
-          activeSubCategory = 'all'; // reset subcategory on top category toggle
-          buildSubCategoryPills();
-          renderMenu();
+    function renderFilters() {
+      const container = document.getElementById("categoryFilterContainer");
+      container.innerHTML = categories
+        .map(cat => `<button class="filter-btn ${cat === currentCategory ? "active" : ""}" data-category="${cat}">${cat === "Hard Seltzer" ? "Hard Seltzers" : cat}</button>`)
+        .join("");
+
+      container.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          currentCategory = btn.dataset.category;
+          currentSubCategory = "All";
+          renderFilters();
+          renderSubFilters();
+          renderGrid();
         });
       });
 
-      // Search Bar
-      const searchBar = document.getElementById('search-bar');
-      searchBar.addEventListener('input', (e) => {
-        searchQuery = e.target.value.toLowerCase().trim();
-        renderMenu();
-      });
+      renderSubFilters();
     }
 
-    function buildSubCategoryPills() {
-      const subContainer = document.getElementById('sub-filters');
+    function renderSubFilters() {
+      const subContainer = document.getElementById("subFilterContainer");
 
-      if (activeCategory === 'all') {
-        subContainer.style.display = 'none';
-        subContainer.innerHTML = '';
+      if (currentCategory === "All") {
+        subContainer.style.display = "none";
+        subContainer.innerHTML = "";
         return;
       }
 
-      // Extract unique subcategories for the active primary category
       const subCategories = Array.from(
         new Set(
           allItems
-            .filter(item => item.category === activeCategory && item.subCategory)
+            .filter(item => item.category === currentCategory && item.subCategory)
             .map(item => item.subCategory)
         )
       ).sort();
 
       if (subCategories.length === 0) {
-        subContainer.style.display = 'none';
-        subContainer.innerHTML = '';
+        subContainer.style.display = "none";
+        subContainer.innerHTML = "";
         return;
       }
 
-      subContainer.style.display = 'flex';
+      subContainer.style.display = "flex";
       subContainer.innerHTML = `
-        <button class="sub-pill ${activeSubCategory === 'all' ? 'active' : ''}" data-sub="all">All ${activeCategory}</button>
+        <button class="sub-pill ${currentSubCategory === "All" ? "active" : ""}" data-sub="All">All ${currentCategory}</button>
         ${subCategories.map(sub => `
-          <button class="sub-pill ${activeSubCategory === sub ? 'active' : ''}" data-sub="${sub}">${sub}</button>
-        `).join('')}
+          <button class="sub-pill ${currentSubCategory === sub ? "active" : ""}" data-sub="${sub}">${sub}</button>
+        `).join("")}
       `;
 
-      subContainer.querySelectorAll('.sub-pill').forEach(pill => {
-        pill.addEventListener('click', () => {
-          subContainer.querySelectorAll('.sub-pill').forEach(p => p.classList.remove('active'));
-          pill.classList.add('active');
-          activeSubCategory = pill.dataset.sub;
-          renderMenu();
+      subContainer.querySelectorAll(".sub-pill").forEach(pill => {
+        pill.addEventListener("click", () => {
+          currentSubCategory = pill.dataset.sub;
+          renderSubFilters();
+          renderGrid();
         });
       });
     }
 
-    function renderMenu() {
-      const container = document.getElementById('menu-grid');
+    function renderGrid() {
+      const grid = document.getElementById("beerWineGrid");
 
       const filtered = allItems.filter(item => {
-        const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
-        const matchesSub = activeSubCategory === 'all' || item.subCategory === activeSubCategory;
+        const matchesCat = currentCategory === "All" || item.category === currentCategory;
+        const matchesSub = currentSubCategory === "All" || item.subCategory === currentSubCategory;
 
         let matchesSearch = true;
         if (searchQuery) {
@@ -418,56 +439,61 @@
             item.origin,
             item.details,
             item.extra?.notes
-          ].filter(Boolean).join(' ').toLowerCase();
+          ].filter(Boolean).join(" ").toLowerCase();
 
           matchesSearch = haystack.includes(searchQuery);
         }
 
-        return matchesCategory && matchesSub && matchesSearch;
+        return matchesCat && matchesSub && matchesSearch;
       });
 
+      document.getElementById("totalCount").innerHTML = `Total Selections: <strong>${filtered.length}</strong>`;
+
       if (filtered.length === 0) {
-        container.innerHTML = `<div class="no-results">No selections match your current filter.</div>`;
+        grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; color: var(--gold-amber);">No items found matching your selection.</div>`;
         return;
       }
 
-      container.innerHTML = filtered.map(item => {
-        const displayDescription = item.extra?.notes || item.details || '';
-        const displayAbv = item.abv && item.abv !== 'N/A' ? item.abv : (item.proof || '');
+      grid.innerHTML = filtered.map(item => {
+        const displayDescription = item.extra?.notes || item.details || "";
         const displayStyle = item.style || item.subCategory || item.category;
-        const displaySize = item.size || (item.sizes ? Object.keys(item.sizes)[0] : '');
+        const displayAbv = item.abv && item.abv !== "N/A" ? item.abv : (item.proof || "");
+        const displaySize = item.size || (item.sizes ? Object.keys(item.sizes)[0] : "");
 
         return `
-          <article class="menu-card ${!item.inStock ? 'out-of-stock' : ''}">
+          <div class="card ${!item.inStock ? 'out-of-stock' : ''}">
             <div>
-              <div class="card-header">
-                <h2 class="item-title">${item.name}</h2>
-                ${item.subCategory ? `<span class="badge-sub">${item.subCategory}</span>` : ''}
+              <div class="card-top">
+                <span class="card-category">${item.category}</span>
+                <div style="display: flex; gap: 6px; align-items: center;">
+                  ${item.subCategory ? `<span class="badge-sub">${item.subCategory}</span>` : ''}
+                  ${!item.inStock ? `<span class="badge-out">Out of Stock</span>` : ''}
+                </div>
               </div>
-
-              <div class="meta-row">
-                <span class="meta-tag">${displayStyle}</span>
-                ${item.origin ? `<span class="meta-tag">${item.origin}</span>` : ''}
-                ${displayAbv ? `<span class="meta-tag">${displayAbv}</span>` : ''}
-              </div>
-
-              <p class="item-desc">${displayDescription}</p>
+              <div class="card-title">${item.name}</div>
+              ${displayDescription ? `<div class="card-desc">${displayDescription}</div>` : ''}
             </div>
 
-            <div class="card-footer">
-              ${
-                item.inStock
-                  ? `<div class="stock-badge in"><span class="stock-dot"></span> In Stock ${item.quantity !== undefined ? `(${item.quantity})` : ''}</div>`
-                  : `<div class="stock-badge out"><span class="stock-dot"></span> Out of Stock</div>`
-              }
-              ${displaySize ? `<span class="item-volume">${displaySize}</span>` : ''}
+            <div class="card-details">
+              <div><strong>Style:</strong> ${displayStyle}</div>
+              ${item.origin ? `<div><strong>Origin:</strong> ${item.origin}</div>` : ''}
+              ${displayAbv ? `<div><strong>ABV / Proof:</strong> ${displayAbv}</div>` : ''}
+              ${item.extra?.barrel && item.extra.barrel !== 'N/A' ? `<div><strong>Aging:</strong> ${item.extra.barrel}</div>` : ''}
+
+              <div class="card-footer">
+                ${item.inStock 
+                  ? `<span class="stock-tag-in">● In Stock ${item.quantity !== undefined ? `(${item.quantity})` : ''}</span>`
+                  : `<span class="stock-tag-out">● Out of Stock</span>`
+                }
+                ${displaySize ? `<span class="size-tag">${displaySize}</span>` : ''}
+              </div>
             </div>
-          </article>
+          </div>
         `;
-      }).join('');
+      }).join("");
     }
 
-    document.addEventListener('DOMContentLoaded', initInventory);
+    document.addEventListener("DOMContentLoaded", init);
   </script>
 </body>
 </html>
