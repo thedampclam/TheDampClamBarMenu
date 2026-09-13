@@ -274,12 +274,12 @@
       "abv": "N/A",
       "size": "16 oz Can",
       "sizes": {
-        "16 oz Can": 1
+        "16 oz Can": 0
       },
-      "quantity": 1,
+      "quantity": 0,
       "details": "Peach Barn Farmhouse & Brewery, Door County, Wisconsin",
       "origin": "Door County, Wisconsin",
-      "inStock": true,
+      "inStock": false,
       "extra": {
         "notes": "Juicy, tropical double dry-hopped hazy IPA guaranteed to get you out of a jam."
       }
