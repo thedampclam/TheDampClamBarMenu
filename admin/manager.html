@@ -204,7 +204,6 @@
       gap: 0.5rem;
     }
 
-    /* Steppers */
     .size-steppers {
       display: flex;
       gap: 0.4rem;
@@ -353,6 +352,7 @@
       border-radius: 6px;
       color: #fff;
       font-size: 0.85rem;
+      font-family: inherit;
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       outline: none;
@@ -466,6 +466,20 @@
       });
     });
 
+    // Unicode-safe Base64 decode
+    function b64ToUtf8(str) {
+      const binString = atob(str.replace(/\s/g, ''));
+      const bytes = Uint8Array.from(binString, m => m.codePointAt(0));
+      return new TextDecoder().decode(bytes);
+    }
+
+    // Unicode-safe Base64 encode
+    function utf8ToB64(str) {
+      const bytes = new TextEncoder().encode(str);
+      const binString = Array.from(bytes, byte => String.fromCodePoint(byte)).join('');
+      return btoa(binString);
+    }
+
     async function loadCollectionData() {
       showToast("Loading data...");
       try {
@@ -474,7 +488,9 @@
         });
         const json = await res.json();
         activeSha = json.sha;
-        activeData = JSON.parse(decodeURIComponent(escape(atob(json.content))));
+        const decoded = b64ToUtf8(json.content);
+        const parsed = JSON.parse(decoded);
+        activeData = Array.isArray(parsed) ? { items: parsed } : (parsed.items ? parsed : { items: [] });
         renderList();
         hideToast();
       } catch (err) {
@@ -483,7 +499,6 @@
       }
     }
 
-    // Helper: Normalize item unit sizes / counts (Spirits, Beer, Wine)
     function getItemUnits(item, col) {
       if (item.sizes && typeof item.sizes === "object" && Object.keys(item.sizes).length > 0) {
         return item.sizes;
@@ -502,7 +517,12 @@
       const query = (document.getElementById("searchBox").value || "").toLowerCase();
 
       const filtered = activeData.items.map((item, idx) => ({ ...item, _idx: idx }))
-        .filter(item => (item.name || "").toLowerCase().includes(query) || (item.category || "").toLowerCase().includes(query));
+        .filter(item => 
+          (item.name || "").toLowerCase().includes(query) || 
+          (item.category || "").toLowerCase().includes(query) ||
+          (item.subCategory || "").toLowerCase().includes(query) ||
+          (item.style || "").toLowerCase().includes(query)
+        );
 
       if (filtered.length === 0) {
         container.innerHTML = `<div style="text-align:center; padding: 2rem; color: var(--gold-amber);">No items found.</div>`;
@@ -561,7 +581,6 @@
       `}).join("");
     }
 
-    // Step a specific unit (e.g. Can, Bottle, 750 mL) up or down
     async function stepUnitQty(index, unitKey, delta) {
       const item = activeData.items[index];
       if (!item.sizes) item.sizes = getItemUnits(item, activeCol);
@@ -614,7 +633,9 @@
     async function pushDataToGithub(commitMsg) {
       showToast("Syncing with GitHub...");
       try {
-        const updatedContent = btoa(unescape(encodeURIComponent(JSON.stringify(activeData, null, 2))));
+        const payload = Array.isArray(activeData) ? activeData : (activeData.items ? activeData : { items: activeData });
+        const updatedContent = utf8ToB64(JSON.stringify(payload, null, 2));
+
         const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${COLLECTIONS[activeCol].file}`, {
           method: "PUT",
           headers: {
@@ -629,6 +650,7 @@
           })
         });
         const result = await res.json();
+        if (!res.ok) throw new Error(result.message || "Failed commit");
         activeSha = result.content.sha;
         showToast("✓ Saved & Published!");
         setTimeout(hideToast, 2000);
@@ -660,6 +682,7 @@
 
     function buildFormFields(data) {
       const container = document.getElementById("dynamicFields");
+
       if (activeCol === "spirits") {
         const sizesStr = data.sizes ? Object.entries(data.sizes).map(([k, v]) => `${k}: ${v}`).join(', ') : (data.size ? `${data.size}: 1` : '750 mL: 1');
         container.innerHTML = `
@@ -672,9 +695,19 @@
           <div class="form-group"><label>Tasting Notes</label><textarea id="f_notes" rows="2">${data.extra?.notes || ''}</textarea></div>
         `;
       } else if (activeCol === "cocktails") {
+        const currentCategory = data.category || "Seasonal";
+        const catOptions = ["Seasonal", "House Signatures", "Classics", "Mule Collection", "Mocktails & Zero-Proof"];
+        const isCustom = !catOptions.includes(currentCategory) && currentCategory !== "";
+
         container.innerHTML = `
           <div class="form-group"><label>Cocktail Name</label><input type="text" id="f_name" value="${data.name || ''}" required /></div>
-          <div class="form-group"><label>Category</label><input type="text" id="f_cat" value="${data.category || 'House Signatures'}" required /></div>
+          <div class="form-group">
+            <label>Category</label>
+            <select id="f_cat">
+              ${catOptions.map(cat => `<option value="${cat}" ${currentCategory === cat ? 'selected' : ''}>${cat === 'Seasonal' ? '🍂 Seasonal' : cat}</option>`).join('')}
+              ${isCustom ? `<option value="${currentCategory}" selected>${currentCategory}</option>` : ''}
+            </select>
+          </div>
           <div class="form-group"><label>Description</label><textarea id="f_desc" rows="2">${data.desc || ''}</textarea></div>
           <div class="form-group"><label>Recipe / Spec</label><textarea id="f_recipe" rows="2">${data.recipe || ''}</textarea></div>
           <div class="form-group"><label>Ingredients</label><input type="text" id="f_ing" value="${data.ingredients || ''}" /></div>
@@ -682,18 +715,27 @@
           <div class="form-group"><label>Garnish</label><input type="text" id="f_garnish" value="${data.garnish || ''}" /></div>
         `;
       } else if (activeCol === "beer_wine") {
-        const isWine = (data.category || "").toLowerCase().includes("wine");
+        const currentCategory = data.category || "Beer";
+        const isWine = currentCategory.toLowerCase().includes("wine");
         const defaultExample = isWine ? "Bottle: 1" : "Can: 4";
         const sizesStr = data.sizes ? Object.entries(data.sizes).map(([k, v]) => `${k}: ${v}`).join(', ') : (data.quantity !== undefined ? (isWine ? `Bottle: ${data.quantity}` : `Can: ${data.quantity}`) : defaultExample);
 
         container.innerHTML = `
           <div class="form-group"><label>Item Name</label><input type="text" id="f_name" value="${data.name || ''}" required /></div>
-          <div class="form-group"><label>Category</label><input type="text" id="f_cat" value="${data.category || 'Beer'}" required /></div>
+          <div class="form-group">
+            <label>Category</label>
+            <select id="f_cat">
+              <option value="Beer" ${currentCategory === 'Beer' ? 'selected' : ''}>Beer</option>
+              <option value="Hard Seltzer" ${currentCategory === 'Hard Seltzer' ? 'selected' : ''}>Hard Seltzer</option>
+              <option value="Wine" ${currentCategory === 'Wine' ? 'selected' : ''}>Wine</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Sub-Category (e.g. Sour, IPA, Fruit Seltzer, Sangria)</label><input type="text" id="f_sub" value="${data.subCategory || ''}" /></div>
           <div class="form-group"><label>Style / Type</label><input type="text" id="f_style" value="${data.style || ''}" /></div>
-          <div class="form-group"><label>Inventory Units & Counts (e.g. Can: 6, 16 oz: 2 OR Bottle: 1)</label><input type="text" id="f_sizes" value="${sizesStr}" /></div>
-          <div class="form-group"><label>ABV</label><input type="text" id="f_abv" value="${data.abv || ''}" /></div>
-          <div class="form-group"><label>Origin</label><input type="text" id="f_origin" value="${data.origin || ''}" /></div>
-          <div class="form-group"><label>Notes / Details</label><textarea id="f_details" rows="2">${data.details || ''}</textarea></div>
+          <div class="form-group"><label>Inventory Units & Counts (e.g. Can: 6, 16 oz Can: 2 OR Bottle: 1)</label><input type="text" id="f_sizes" value="${sizesStr}" /></div>
+          <div class="form-group"><label>ABV / Proof</label><input type="text" id="f_abv" value="${data.abv || data.proof || ''}" /></div>
+          <div class="form-group"><label>Origin / Brewery</label><input type="text" id="f_origin" value="${data.origin || ''}" /></div>
+          <div class="form-group"><label>Notes / Details</label><textarea id="f_details" rows="2">${data.extra?.notes || data.details || ''}</textarea></div>
         `;
       } else if (activeCol === "merch") {
         container.innerHTML = `
@@ -721,18 +763,22 @@
           updatedObj.details = document.getElementById("f_details").value.trim();
 
           const notes = document.getElementById("f_notes").value.trim();
-          if (notes) {
-            if (!updatedObj.extra) updatedObj.extra = {};
-            updatedObj.extra.notes = notes;
-          }
+          if (!updatedObj.extra) updatedObj.extra = {};
+          if (notes) updatedObj.extra.notes = notes;
         } else {
+          updatedObj.subCategory = document.getElementById("f_sub").value.trim();
           updatedObj.style = document.getElementById("f_style").value.trim();
-          updatedObj.abv = document.getElementById("f_abv").value.trim();
+          const abvVal = document.getElementById("f_abv").value.trim();
+          updatedObj.abv = abvVal;
+          if (updatedObj.category === "Wine") updatedObj.proof = abvVal;
           updatedObj.origin = document.getElementById("f_origin").value.trim();
-          updatedObj.details = document.getElementById("f_details").value.trim();
+          const detailsVal = document.getElementById("f_details").value.trim();
+          updatedObj.details = detailsVal;
+          if (!updatedObj.extra) updatedObj.extra = {};
+          if (detailsVal) updatedObj.extra.notes = detailsVal;
         }
 
-        // Parse custom counts string (e.g. "Can: 4, 16 oz: 2" or "Bottle: 2")
+        // Parse custom counts string (e.g. "Can: 4, 16 oz Can: 2" or "Bottle: 2")
         const rawSizes = document.getElementById("f_sizes").value.split(",");
         const sizesMap = {};
         let totalCount = 0;
