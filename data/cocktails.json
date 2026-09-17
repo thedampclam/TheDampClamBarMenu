@@ -218,7 +218,7 @@
       "ingredients": "Rum, Pineapple Juice, Orange Juice, Cream of Coconut, Nutmeg",
       "glass": "Goblet or Tall Glass over Ice",
       "garnish": "Nutmeg, Orange Slice & Cherry",
-      "inStock": false,
+      "inStock": true,
       "missingReason": "Out of Stock: Requires Pineapple Juice & Cream of Coconut"
     },
     {
