@@ -1225,6 +1225,29 @@
         "mash": "Islay, Scotland",
         "barrel": "Ex-bourbon and Sherry casks"
       }
+    },
+    {
+      "name": "Pusser's British Navy Rum Original Admiralty Rum",
+      "category": "Rum & Aquavit",
+      "subCategory": "Navy Rum",
+      "style": "Navy Rum",
+      "proof": "84 Proof (42% ABV)",
+      "abv": "84 Proof (42% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Bottled by Pusser's Rum Ltd., British Virgin Islands",
+      "origin": "Guyana",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Rich and full-bodied with notes of dark molasses, caramel, dried fruits, oak, and warm baking spices.",
+        "mash": "Guyana",
+        "barrel": "Aged in charred wooden barrels"
+      }
     }
   ]
 }
