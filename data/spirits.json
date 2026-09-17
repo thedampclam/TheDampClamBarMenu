@@ -1202,6 +1202,29 @@
         "mash": "Scotland / Aged Scotch Whisky, Heather Honey, Herbs & Spices",
         "barrel": "Aged Scotch Whisky base"
       }
+    },
+    {
+      "name": "Ardbeg Uigeadail",
+      "category": "Scotch Whisky",
+      "subCategory": "Islay Single Malt",
+      "style": "Islay Single Malt",
+      "proof": "108.4 Proof (54.2% ABV)",
+      "abv": "108.4 Proof (54.2% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Ardbeg Distillery Limited, Isle of Islay, Scotland. Estd 1815. Non chill-filtered.",
+      "origin": "Islay, Scotland",
+      "isSpecial": true,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Treacle, bacon, bonfires",
+        "mash": "Islay, Scotland",
+        "barrel": "Ex-bourbon and Sherry casks"
+      }
     }
   ]
 }
