@@ -310,7 +310,7 @@
       "ingredients": "Traverse City Bourbon, Tart Cherry Juice, Lime Juice, Ginger Beer",
       "glass": "Copper Mug with Ice",
       "garnish": "Brandied Cherry & Lime Wheel",
-      "inStock": false,
+      "inStock": true,
       "missingReason": "Out of Stock: Requires Tart Cherry Juice & Brandied Cherries"
     },
     {
