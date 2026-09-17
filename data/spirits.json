@@ -1248,6 +1248,29 @@
         "mash": "Guyana",
         "barrel": "Aged in charred wooden barrels"
       }
+    },
+    {
+      "name": "Dewar's Aged 19 Years The Champion's Edition Blended Scotch Whisky (125th U.S. Open Oakmont)",
+      "category": "Scotch Whisky",
+      "subCategory": "Blended Scotch Whisky",
+      "style": "Blended Scotch Whisky",
+      "proof": "86 Proof (43% ABV)",
+      "abv": "86 Proof (43% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "John Dewar & Sons Ltd, Perthshire, Scotland. Special release created for the 125th U.S. Open at Oakmont.",
+      "origin": "Scotland",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Smooth blended scotch featuring rich notes of crisp apple, citrus, honey, and subtle spice imparted by French Calvados apple brandy cask finishing.",
+        "mash": "Scotland",
+        "barrel": "Double aged for extra smoothness and finished in Calvados casks"
+      }
     }
   ]
 }
