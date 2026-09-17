@@ -215,11 +215,10 @@
       "category": "Classics",
       "desc": "Tropical British Virgin Islands staple with pineapple, orange, coconut, and dark rum.",
       "recipe": "2 oz Rum, 4 oz Pineapple Juice, 1 oz Orange Juice, 1 oz Cream of Coconut, Grated Nutmeg",
-      "ingredients": "Rum, Pineapple Juice, Orange Juice, Cream of Coconut, Nutmeg",
+      "ingredients": "Pusser's Rum, Pineapple Juice, Orange Juice, Cream of Coconut, Nutmeg",
       "glass": "Goblet or Tall Glass over Ice",
       "garnish": "Nutmeg, Orange Slice & Cherry",
       "inStock": true,
-      "missingReason": "Out of Stock: Requires Pineapple Juice & Cream of Coconut"
     },
     {
       "name": "Maple Boulevardier",
@@ -311,7 +310,6 @@
       "glass": "Copper Mug with Ice",
       "garnish": "Brandied Cherry & Lime Wheel",
       "inStock": true,
-      "missingReason": "Out of Stock: Requires Tart Cherry Juice & Brandied Cherries"
     },
     {
       "name": "Sparkling Citrus Cooler",
