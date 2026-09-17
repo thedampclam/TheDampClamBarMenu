@@ -1179,6 +1179,29 @@
         "notes": "Tart, sour blue raspberry profile balanced with sweet corn moonshine base",
         "mash": "Tennessee, USA / Spirits Distilled from Corn"
       }
+    },
+    {
+      "name": "Drambuie The Isle of Skye Liqueur",
+      "category": "Gin, Vodka & Liqueurs",
+      "subCategory": "Whisky Liqueur",
+      "style": "Whisky Liqueur",
+      "proof": "80 Proof (40% alc./vol.)",
+      "abv": "80 Proof (40% alc./vol.)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Produced & Bottled in Mainland Scotland, Since 1745",
+      "origin": "Scotland / Aged Scotch Whisky, Heather Honey, Herbs & Spices",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "A unique blend of aged Scotch whisky, rich heather honey, and aromatic herbs and spices.",
+        "mash": "Scotland / Aged Scotch Whisky, Heather Honey, Herbs & Spices",
+        "barrel": "Aged Scotch Whisky base"
+      }
     }
   ]
 }
