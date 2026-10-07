@@ -1271,6 +1271,28 @@
         "mash": "Scotland",
         "barrel": "Double aged for extra smoothness and finished in Calvados casks"
       }
+    },
+    {
+      "name": "St. Julian Apple Brandy",
+      "category": "Gin, Vodka & Liqueurs",
+      "subCategory": "Apple Brandy",
+      "style": "Apple Brandy",
+      "proof": "80 Proof (40% ABV)",
+      "abv": "80 Proof (40% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Produced & Bottled by St. Julian Wine Co., Paw Paw, MI",
+      "origin": "Paw Paw, Michigan / Distilled from Michigan Apples",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Premium handcrafted spirit distilled from fresh Michigan apples.",
+        "mash": "Paw Paw, Michigan / Distilled from Michigan Apples"
+      }
     }
   ]
 }
