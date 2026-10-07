@@ -702,6 +702,28 @@
         "mash": "Prairie du Sac, Wisconsin / Seyval Grape",
         "barrel": "Stainless steel tank fermented"
       }
+    },
+    {
+      "name": "St. Julian Beach, Please! Semi-Sweet Rosé Wine",
+      "category": "Wine",
+      "subCategory": "Rosé",
+      "style": "Rosé",
+      "proof": "11% ABV",
+      "abv": "11% ABV",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "St. Julian Winery",
+      "origin": "Michigan, USA",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Semi-sweet rosé with a fruity, sweet profile and bright tropical style.",
+        "mash": "Michigan, USA"
+      }
     }
   ]
 }
