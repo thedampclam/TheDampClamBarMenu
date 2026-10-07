@@ -724,6 +724,28 @@
         "notes": "Semi-sweet rosé with a fruity, sweet profile and bright tropical style.",
         "mash": "Michigan, USA"
       }
+    },
+    {
+      "name": "St. Julian Head Games A Spiced Red Wine",
+      "category": "Wine",
+      "subCategory": "Spiced Red Wine",
+      "style": "Spiced Red Wine",
+      "proof": "12.5% ABV",
+      "abv": "12.5% ABV",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "St. Julian Winery",
+      "origin": "Michigan, USA",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Sweet, aromatic red wine infused with natural warm spices like cinnamon, cloves, and citrus.",
+        "mash": "Michigan, USA"
+      }
     }
   ]
 }
