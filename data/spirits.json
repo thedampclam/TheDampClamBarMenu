@@ -1293,6 +1293,29 @@
         "notes": "Premium handcrafted spirit distilled from fresh Michigan apples.",
         "mash": "Paw Paw, Michigan / Distilled from Michigan Apples"
       }
+    },
+    {
+      "name": "Traverse City Whiskey Co. Apple Old Fashioned Cocktail",
+      "category": "Bourbon & American Whiskey",
+      "subCategory": "Prepared Cocktail",
+      "style": "Prepared Cocktail",
+      "proof": "54 Proof (27% ABV)",
+      "abv": "54 Proof (27% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Limited Edition release produced in collaboration with Angry Orchard",
+      "origin": "Traverse City, Michigan",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Apple Old Fashioned cocktail made with bourbon whiskey, bitters, simple syrup, and Angry Orchard apples.",
+        "mash": "Traverse City, Michigan",
+        "barrel": "Aged Bourbon Whiskey base"
+      }
     }
   ]
 }
