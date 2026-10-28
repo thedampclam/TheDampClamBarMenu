@@ -1316,6 +1316,28 @@
         "mash": "Traverse City, Michigan",
         "barrel": "Aged Bourbon Whiskey base"
       }
+    },
+    {
+      "name": "Maker's Mark - The Lost Recipe Series - 3rd edition",
+      "category": "Bourbon & American Whiskey",
+      "subCategory": "",
+      "style": "",
+      "proof": "110 proof (55.1%ABV)",
+      "abv": "110 proof (55.1%ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Maker's Mark bourbon/ Loretto, KY",
+      "origin": "",
+      "isSpecial": true,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Dark chocolate, buttery pastry, and notes of baked apple.",
+        "barrel": "1 seared French Cuvee stave, 9 Roasted French Mocha staves"
+      }
     }
   ]
 }
