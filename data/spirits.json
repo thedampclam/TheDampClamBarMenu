@@ -1338,6 +1338,29 @@
         "notes": "Dark chocolate, buttery pastry, and notes of baked apple.",
         "barrel": "1 seared French Cuvee stave, 9 Roasted French Mocha staves"
       }
+    },
+    {
+      "name": "Old Pulteney Aged 12 Years Single Malt Scotch Whisky",
+      "category": "Scotch Whisky",
+      "subCategory": "Single Malt",
+      "style": "Single Malt",
+      "proof": "80 Proof (40% ABV)",
+      "abv": "80 Proof (40% ABV)",
+      "size": "750 mL",
+      "sizes": {
+        "750 mL": 1
+      },
+      "quantity": 1,
+      "details": "Pulteney Distillery, Wick, Caithness, Scotland. Founded by James Henderson in 1826.",
+      "origin": "Port of Wick, Caithness, Scotland",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Robust yet smooth, with a delicate hint of sea air.",
+        "mash": "Port of Wick, Caithness, Scotland",
+        "barrel": "Matured over fine American oak"
+      }
     }
   ]
 }
