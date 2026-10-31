@@ -1361,6 +1361,29 @@
         "mash": "Port of Wick, Caithness, Scotland",
         "barrel": "Matured over fine American oak"
       }
+    },
+    {
+      "name": "The GlenDronach Ode to the Embers Highland Single Malt Scotch Whisky",
+      "category": "Scotch Whisky",
+      "subCategory": "Highland Single Malt",
+      "style": "Highland Single Malt",
+      "proof": "48% ABV",
+      "abv": "48% ABV",
+      "size": "700 mL",
+      "sizes": {
+        "700 mL": 1
+      },
+      "quantity": 1,
+      "details": "Distilled, matured and bottled in Scotland. Master Blender Rachel Barrie.",
+      "origin": "Highland, Scotland / 100% Malted Barley",
+      "isSpecial": false,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Sherry & Smoke",
+        "mash": "Highland, Scotland / 100% Malted Barley",
+        "barrel": "Matured in Sherry Casks"
+      }
     }
   ]
 }
