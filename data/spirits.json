@@ -1384,6 +1384,29 @@
         "mash": "Highland, Scotland / 100% Malted Barley",
         "barrel": "Matured in Sherry Casks"
       }
+    },
+    {
+      "name": "Bruichladdich Octomore 16.2 Islay Single Malt Scotch Whisky",
+      "category": "Scotch Whisky",
+      "subCategory": "Islay Single Malt",
+      "style": "Islay Single Malt",
+      "proof": "116.2 Proof (58.1% ABV)",
+      "abv": "116.2 Proof (58.1% ABV)",
+      "size": "700 mL",
+      "sizes": {
+        "700 mL": 1
+      },
+      "quantity": 1,
+      "details": "Bruichladdich Distillery, Isle of Islay, Scotland , 2025 Release",
+      "origin": "Islay, Scotland / 100% Malted Barley (Super Heavily Peated, 101.4 PPM), Concerto barley",
+      "isSpecial": true,
+      "isGifted": false,
+      "inStock": true,
+      "extra": {
+        "notes": "Super heavily peated at 101.4 PPM. Un-chill filtered with no added colour.",
+        "mash": "Islay, Scotland / 100% Malted Barley (Super Heavily Peated, 101.4 PPM), Concerto barley",
+        "barrel": "Matured at Bruichladdich Distillery"
+      }
     }
   ]
 }
